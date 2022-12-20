@@ -2,7 +2,7 @@
 #define THRESHOLD 3
 #define STAR_MIN_PIXEL 3
 #define STAR_MAX_PIXEL 150
-#define MAX_STARS 100
+#define MAX_STARS 50    //changed
 #define SKIP_PIXELS 2
 #define LENGTH 808
 #define BREADTH 608
@@ -23,8 +23,9 @@
 #define P2 80
 
 //TM constants
-int Nth = 8;
+#define Nth 8
+#define N_TH_TRACKING 4
 #define FOV_x 1024
 #define FOV_y 1280
-#define RBM_radius 15
-double pixel_size = 4.8e-6;
+#define RBM_RADIUS 15
+#define pixel_size 4.8e-6

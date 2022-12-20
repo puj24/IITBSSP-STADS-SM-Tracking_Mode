@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 //images
 #include "image_1.h"
@@ -105,7 +106,8 @@ int main()
             }
 
             else{
-                starNeighbourhoodMatch(RBM_centroid_st, next_centroids_st, next_tot_stars, sm_SNT, sm_GC, newEntries)
+                double newEntries[N_TH_TRACKING][3];
+                starNeighbourhoodMatch(RBM_centroid_st, next_centroids_st, next_tot_stars, sm_SNT, sm_GC, newEntries);
                 printf("Identify new stars entering the FOV");
             }
 

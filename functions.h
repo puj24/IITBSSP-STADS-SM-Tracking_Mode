@@ -6,6 +6,7 @@
 #include "constants.h"
 #include "sm_K_vec_arr.h"
 #include "sm_GC.h"
+#include "sm_TM_SNT.h"
 
 // -------------------------------RGA functions------------------------------------
 
@@ -742,47 +743,78 @@ void bubbleSort3(double arr[][3], int n, int ind)
     }
 }
 
-int radiusBasedMatching(int common_stars, int next_tot_stars, double predicted_centroids_st[][3], double next_centroids_st[][3], double RBM_match[][3])
+
+double gc_id_angdist(int star_id_1, int star_id_2)
+{
+    double dot, norm1, norm2, id_dist;
+
+    dot = sm_GC[star_id_1][1]*sm_GC[star_id_2][1] + sm_GC[star_id_1][2]*sm_GC[star_id_2][2] + sm_GC[star_id_1][3]*sm_GC[star_id_2][3];
+    norm1 = sqrt(sm_GC[star_id_1][1]*sm_GC[star_id_1][1] + sm_GC[star_id_1][2]*sm_GC[star_id_1][2] + sm_GC[star_id_1][3]*sm_GC[star_id_1][3]);
+    norm2 = sqrt(sm_GC[star_id_2][1]*sm_GC[star_id_2][1] + sm_GC[star_id_2][2]*sm_GC[star_id_2][2] + sm_GC[star_id_2][3]*sm_GC[star_id_2][3]);
+
+    id_dist = dot/(norm1*norm2);
+    return id_dist;
+}
+
+
+double centroid_angdist(double x1, double y1, double x2, double y2)
+{
+    double dot, norm1, norm2, centroid_dist;
+    double f = FOCAL_LENGTH;
+
+    dot = x1*x2 + y1*y2 + f*f;
+    norm1 = sqrt(x1*x1 + y1*y1 + f*f);
+    norm2 = sqrt(x2*x2 + y2*y2 + f*f);
+
+    centroid_dist = dot/(norm1*norm2);
+    return centroid_dist;
+}
+
+int radiusBasedMatching(int common_stars, int next_tot_stars, double predicted_centroids_st[][3], double next_centroids_st[][3], double RBM_match[][4])
 {    
+    int start_ind = 0;
     int sole_matched = 0;
     int matched = 0;
     int not_matched = 0;
+    int r = RBM_RADIUS * pixel_size;
 
     for (int i = 0; i < common_stars; i++){
 
         int stars_in_range = 0;
         for (int j = 0; j < next_tot_stars; j++)
         {            
-            double dx = next_centroids_st[j][1] - predicted_centroids_st[i][1];    
-            double dy = next_centroids_st[j][2] - predicted_centroids_st[i][2];
+            double dx = abs(next_centroids_st[j][1] - predicted_centroids_st[i][1]);    
+            double dy = abs(next_centroids_st[j][2] - predicted_centroids_st[i][2]);
            
-            double distance = sqrt(dx*dx + dy*dy);
+            // double distance = sqrt(dx*dx + dy*dy);
             // printf("distance %f\n", distance);
 
-            if (distance < RBM_RADIUS)
+            if (dx < r)
             {
-                int start_ind = j;
-                stars_in_range++;
-                if (stars_in_range > 1)
+                // start_ind = j;
+                if (dy < r)
                 {
+                    stars_in_range++;
+                    if (stars_in_range > 1)
+                    {
+                        not_matched++; 
+                        break;
+                    }
+                    sole_matched = j;
+                }                
                     //store not matched stars BUT NOT ALL ENTRIES ARE CONSIDERED IN THIS
                     // newEntries[not_matched][0] = predicted_centroids_st[i][0]; 
                     // newEntries[not_matched][1] = predicted_centroids_st[i][1]; 
-                    // newEntries[not_matched][2] = predicted_centroids_st[i][2];
-                    not_matched++; 
-                    break;
-                }
-                sole_matched = j;
+                    // newEntries[not_matched][2] = predicted_centroids_st[i][2];                
             }
         }
 
         if (stars_in_range == 1){
-
-            RBM_match[matched][0] = predicted_centroids_st[i][0];       //star_id
-            RBM_match[matched][1] = predicted_centroids_st[i][1];       //pred_cent_x
-            RBM_match[matched][2] = predicted_centroids_st[i][2];       //pred_cent_y
-            RBM_match[matched][3] = next_centroids_st[sole_matched][1]; //next_cent_x
-            RBM_match[matched][4] = next_centroids_st[sole_matched][2]; //next_cent_y
+            printf("check\n");
+            RBM_match[matched][0] = next_centroids_st[sole_matched][0]; //fe_id
+            RBM_match[matched][1] = predicted_centroids_st[i][0];       //star_id
+            RBM_match[matched][2] = next_centroids_st[sole_matched][1]; //next_cent_x
+            RBM_match[matched][3] = next_centroids_st[sole_matched][2]; //next_cent_y
             matched++;        
         }
 
@@ -790,10 +822,10 @@ int radiusBasedMatching(int common_stars, int next_tot_stars, double predicted_c
     return (matched);
 }
 
-void starNeighbourhoodMatch(double RBM_matched[][3],double next_centroids_st[][3],int next_tot_stars,int sm_SNT[5060][7],double sm_GC[5060][4],double newEntries[][3])
+void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3],int next_tot_stars,int sm_SNT[5060][11],double sm_GC[][4],double newEntries[][3], int* new_matched_stars)
 {
     double fe_unmatched[next_tot_stars][3];
-    int num_ummatched = 0;
+    int num_unmatched = 0;
 
     for (int j = 0; j < next_tot_stars; j++)
     {
@@ -801,42 +833,42 @@ void starNeighbourhoodMatch(double RBM_matched[][3],double next_centroids_st[][3
 
         for (int i = 0; i < next_tot_stars; i++)
         {
-            if((RBM_matched[i][1] == next_centroids_st[j][1]) and (RBM_matched[i][2] == next_centroids_st[j][2]))
+            if((RBM_matched[i][2] == next_centroids_st[j][1]) && (RBM_matched[i][3] == next_centroids_st[j][2]))
             {
                 already_matched = true;
                 break;
             }
         }
-        if(not already_matched)
+        if(!(already_matched))
         {
             fe_unmatched[num_unmatched][1] = next_centroids_st[j][1];
             fe_unmatched[num_unmatched][2] = next_centroids_st[j][2];
-            num_ummatched++;
+            num_unmatched++;
         }
     }
 
-    int new_matched = 0;
-
-    while (new_matched < Nth - next_tot_stars)
+    int matched_stars = 0;
+    while (matched_stars < Nth - next_tot_stars)
     {
         for (int i = 0; i < next_tot_stars; i++)
         {
-            int curr_ref_star = RBM_matched[i][0];
+            int curr_ref_star = RBM_matched[i][1];  //star_id
             while(sm_SNT[curr_ref_star][1] != 0)
             {
-                double x1 = RBM_matched[i][1];
-                double y1 = RBM_matched[i][2];
-                double x2 = fe_unmatched[new_matched][1];
-                double y2 = fe_unmatched[new_matched][2];
+                double x1 = RBM_matched[i][2];
+                double y1 = RBM_matched[i][3];
+                double x2 = fe_unmatched[matched_stars][1];
+                double y2 = fe_unmatched[matched_stars][2];
 
-                if(gc_id_angdist(curr_ref_star, sm_SNT[curr_ref_star][1], sm_GC) == centroid_angdist(x1, y1, x2, y2, FOCAL_LENGTH, pixel_size))
+                if(gc_id_angdist(curr_ref_star, sm_SNT[curr_ref_star][1]) == centroid_angdist(x1, y1, x2, y2))
                 {
-                    newEntries[new_matched][0] = sm_SNT[curr_ref_star][1];
-                    newEntries[new_matched][1] = RBM_matched[i][1];
-                    newEntries[new_matched][2] = RBM_matched[i][2];
-                    new_matched++;
+                    newEntries[matched_stars][0] = sm_SNT[curr_ref_star][1];
+                    newEntries[matched_stars][1] = RBM_matched[i][2];
+                    newEntries[matched_stars][2] = RBM_matched[i][3];
+                    matched_stars++;
                 }
             }
         }
     }
+    *new_matched_stars = matched_stars;
 }
