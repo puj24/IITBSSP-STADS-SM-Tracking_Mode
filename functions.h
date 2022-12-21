@@ -865,15 +865,15 @@ void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3
             {
                 double x1 = RBM_matched[i][2];
                 double y1 = RBM_matched[i][3];
-                double x2 = fe_unmatched[matched_stars][1];
-                double y2 = fe_unmatched[matched_stars][2];
+                double x2 = fe_unmatched[i_unmatch][1];
+                double y2 = fe_unmatched[i_unmatch][2];
 
                 if(gc_id_angdist(curr_ref_star, sm_SNT[curr_ref_star][1]) == centroid_angdist(x1, y1, x2, y2))
                 {
-                    newEntries[matched_stars][0] = fe_unmatched[matched_stars][0];
+                    newEntries[matched_stars][0] = fe_unmatched[i_unmatch][0];
                     newEntries[matched_stars][1] = sm_SNT[curr_ref_star][1];
-                    newEntries[matched_stars][2] = fe_unmatched[matched_stars][1];
-                    newEntries[matched_stars][3] = fe_unmatched[matched_stars][2];
+                    newEntries[matched_stars][2] = fe_unmatched[i_unmatch][1];
+                    newEntries[matched_stars][3] = fe_unmatched[i_unmatch][2];
                     matched_stars++;
                     done = true;
                 }
