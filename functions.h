@@ -822,7 +822,7 @@ int radiusBasedMatching(int common_stars, int next_tot_stars, double predicted_c
     return (matched);
 }
 
-void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3],int next_tot_stars,int sm_SNT[5060][11],double sm_GC[][4],double newEntries[][3], int* new_matched_stars)
+void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3],int next_tot_stars,int sm_SNT[5060][11],double sm_GC[][4],double newEntries[][4], int* new_matched_stars)
 {
     double fe_unmatched[next_tot_stars][3];
     int num_unmatched = 0;
@@ -841,19 +841,27 @@ void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3
         }
         if(!(already_matched))
         {
+            fe_unmatched[num_unmatched][0] = next_centroids_st[j][0];
             fe_unmatched[num_unmatched][1] = next_centroids_st[j][1];
             fe_unmatched[num_unmatched][2] = next_centroids_st[j][2];
             num_unmatched++;
         }
     }
 
+    int i_unmatch = 0;
     int matched_stars = 0;
-    while (matched_stars < Nth - next_tot_stars)
+
+    for (i_unmatch = 0; i_unmatch < num_unmatched; i_unmatch++)
     {
+        bool done = false;
         for (int i = 0; i < next_tot_stars; i++)
         {
             int curr_ref_star = RBM_matched[i][1];  //star_id
-            while(sm_SNT[curr_ref_star][1] != 0)
+            if (curr_ref_star > 5060) continue;     //becz we don't have SNT for N_GC=8876 yet
+            if (matched_stars == Nth - next_tot_stars) break;
+
+            int j = 0;
+            while(sm_SNT[curr_ref_star - 1][j] != 0)
             {
                 double x1 = RBM_matched[i][2];
                 double y1 = RBM_matched[i][3];
@@ -862,12 +870,18 @@ void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3
 
                 if(gc_id_angdist(curr_ref_star, sm_SNT[curr_ref_star][1]) == centroid_angdist(x1, y1, x2, y2))
                 {
-                    newEntries[matched_stars][0] = sm_SNT[curr_ref_star][1];
-                    newEntries[matched_stars][1] = RBM_matched[i][2];
-                    newEntries[matched_stars][2] = RBM_matched[i][3];
+                    newEntries[matched_stars][0] = fe_unmatched[matched_stars][0];
+                    newEntries[matched_stars][1] = sm_SNT[curr_ref_star][1];
+                    newEntries[matched_stars][2] = fe_unmatched[matched_stars][1];
+                    newEntries[matched_stars][3] = fe_unmatched[matched_stars][2];
                     matched_stars++;
+                    done = true;
                 }
+                j++;
+                if (done) break;
+
             }
+            if (done) break;
         }
     }
     *new_matched_stars = matched_stars;

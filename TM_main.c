@@ -95,7 +95,7 @@ int main()
             //FE on the next frame
             FE(next_img, next_centroids_st, &next_tot_stars);
 
-            double RBM_centroid_st[next_tot_stars][3];
+            double RBM_centroid_st[next_tot_stars][4];
             int matched_stars = radiusBasedMatching(common_stars, next_tot_stars, predicted_centroids_st, next_centroids_st, RBM_centroid_st);
             printf("Matched stars = %d ", matched_stars);
 
@@ -106,8 +106,9 @@ int main()
             }
 
             else{
-                double newEntries[N_TH_TRACKING][3];
-                starNeighbourhoodMatch(RBM_centroid_st, next_centroids_st, next_tot_stars, sm_SNT, sm_GC, newEntries);
+                int new_matched_stars = 0;
+                double newEntries[N_TH_TRACKING][4];
+                starNeighbourhoodMatch(RBM_centroid_st, next_centroids_st, next_tot_stars, sm_SNT, sm_GC, newEntries, &new_matched_stars);
                 printf("Identify new stars entering the FOV");
             }
 

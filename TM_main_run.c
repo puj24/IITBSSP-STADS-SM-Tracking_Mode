@@ -199,7 +199,7 @@ int main()
                 //need to update next_matched_stars, next_data
                 // from newEntries & RBM_match
                 int new_matched_stars = 0;
-                double newEntries[N_TH_TRACKING][3];
+                double newEntries[N_TH_TRACKING][4];
                 starNeighbourhoodMatch(RBM_centroid_st, next_centroids_st, next_tot_stars, sm_SNT, sm_GC, newEntries, &new_matched_stars);
                 
                 next_matched_stars = RBM_matched_stars + new_matched_stars;
