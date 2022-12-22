@@ -10,6 +10,12 @@
 
 // -------------------------------RGA functions------------------------------------
 
+double absoluteValue(double x)
+{
+    if (x < 0) return -x;
+    return x;
+}
+
 void sort(double centroids_st[][3], unsigned long pixel_track[MAX_STARS], int tot_stars){
 	double temp_st[3];
 	unsigned long temp_pt;
@@ -771,53 +777,54 @@ double centroid_angdist(double x1, double y1, double x2, double y2)
 }
 
 int radiusBasedMatching(int common_stars, int next_tot_stars, double predicted_centroids_st[][3], double next_centroids_st[][3], double RBM_match[][4])
-{    
-    int start_ind = 0;
+{   
+    // bubbleSort3(predicted_centroids_st, common_stars, 0);
+    // bubbleSort3(next_centroids_st, next_tot_stars, 0); 
+
     int sole_matched = 0;
     int matched = 0;
     int not_matched = 0;
-    int r = RBM_RADIUS * pixel_size;
+    double r = RBM_RADIUS * pixel_size;
+    // printf("r = %f\n", r);
 
     for (int i = 0; i < common_stars; i++){
 
         int stars_in_range = 0;
         for (int j = 0; j < next_tot_stars; j++)
         {            
-            double dx = abs(next_centroids_st[j][1] - predicted_centroids_st[i][1]);    
-            double dy = abs(next_centroids_st[j][2] - predicted_centroids_st[i][2]);
-           
+            double dx = absoluteValue(next_centroids_st[j][1] - predicted_centroids_st[i][1]);    
+            double dy = absoluteValue(next_centroids_st[j][2] - predicted_centroids_st[i][2]);
+
+            // printf("x1 = %f, x2 = %f, dx = %f\n", next_centroids_st[j][1], predicted_centroids_st[i][1], dx);
             // double distance = sqrt(dx*dx + dy*dy);
             // printf("distance %f\n", distance);
 
             if (dx < r)
             {
-                // start_ind = j;
                 if (dy < r)
                 {
                     stars_in_range++;
                     if (stars_in_range > 1)
                     {
+                        //store not matched stars BUT NOT ALL ENTRIES ARE CONSIDERED IN THIS
+                        // newEntries[not_matched][0] = predicted_centroids_st[i][0]; 
+                        // newEntries[not_matched][1] = predicted_centroids_st[i][1]; 
+                        // newEntries[not_matched][2] = predicted_centroids_st[i][2];
                         not_matched++; 
                         break;
                     }
                     sole_matched = j;
-                }                
-                    //store not matched stars BUT NOT ALL ENTRIES ARE CONSIDERED IN THIS
-                    // newEntries[not_matched][0] = predicted_centroids_st[i][0]; 
-                    // newEntries[not_matched][1] = predicted_centroids_st[i][1]; 
-                    // newEntries[not_matched][2] = predicted_centroids_st[i][2];                
+                }                                                    
             }
         }
-
         if (stars_in_range == 1){
-            printf("check\n");
+            // printf("check: stars_in_range = 1\n");
             RBM_match[matched][0] = next_centroids_st[sole_matched][0]; //fe_id
             RBM_match[matched][1] = predicted_centroids_st[i][0];       //star_id
             RBM_match[matched][2] = next_centroids_st[sole_matched][1]; //next_cent_x
             RBM_match[matched][3] = next_centroids_st[sole_matched][2]; //next_cent_y
             matched++;        
         }
-
     }
     return (matched);
 }
