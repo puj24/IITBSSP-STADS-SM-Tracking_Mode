@@ -1,0 +1,592 @@
+Frame1: calling LISM
+
+Frame2: calling LISM
+
+Common Stars: 7
+Matched stars = 7 GO TO ESTIMAION
+Frame3: TM succees
+
+Common Stars: 7
+Matched stars = 7 GO TO ESTIMAION
+Frame4: TM succees
+
+Common Stars: 7
+Matched stars = 7 GO TO ESTIMAION
+Frame5: TM succees
+
+Common Stars: 7
+Matched stars = 7 GO TO ESTIMAION
+Frame6: TM succees
+
+Common Stars: 7
+Matched stars = 6 GO TO ESTIMAION
+Frame7: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame8: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame9: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame10: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame11: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame12: TM succees
+
+Common Stars: 6
+Matched stars = 5 GO TO ESTIMAION
+Frame13: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame14: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame15: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame16: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame17: TM succees
+
+Common Stars: 5
+Matched stars = 4 4530.000000 1500.000000 409.000000 31.000000
+newMatched_stars: 0
+Identify new stars entering the FOV
+Frame18: TM succees
+
+Common Stars: 4
+Matched stars = 2 4530.000000 409.000000 409.000000 31.000000
+newMatched_stars: 0
+Identify new stars entering the FOV
+Frame19: TM succees
+
+Common Stars: 2
+Matched stars = 2 4530.000000 409.000000 409.000000 31.000000
+newMatched_stars: 0
+Identify new stars entering the FOV
+Frame20: TM succees
+
+Common Stars: 2
+Matched stars = 1 409.000000 409.000000 409.000000 31.000000
+newMatched_stars: 0
+Identify new stars entering the FOV
+Frame21: TM succees
+
+Common Stars: 1
+Frame22: TM Failed. Calling LISM
+
+LISM seg fault check
+Common Stars: 1
+Frame23: TM Failed. Calling LISM
+
+Segmentation fault
+
+
+-------------------------------------------------------------output---------------------------------------------------------------------------
+
+Common Stars: 5
+Matched stars = 4 4530.000000 1500.000000 409.000000 31.000000
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999541, Error =2589.879923
+GC_angdist =0.999945, Centroid_angdist =0.999541, Error =4047.114136
+GC_angdist =0.999980, Centroid_angdist =0.999541, Error =4391.764855
+GC_angdist =0.999982, Centroid_angdist =0.999541, Error =4416.539201
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.999899, Error =2271.637261
+GC_angdist =0.999795, Centroid_angdist =0.999899, Error =1039.555628
+GC_angdist =0.999899, Centroid_angdist =0.999899, Error =1.137839
+GC_angdist =0.999899, Centroid_angdist =0.999899, Error =0.453058
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.997613, Error =21869.197310
+GC_angdist =0.999945, Centroid_angdist =0.997613, Error =23326.431523
+GC_angdist =0.999980, Centroid_angdist =0.997613, Error =23671.082241
+GC_angdist =0.999982, Centroid_angdist =0.997613, Error =23695.856588
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.996920, Error =27520.787671
+GC_angdist =0.999795, Centroid_angdist =0.996920, Error =28752.869304
+GC_angdist =0.999899, Centroid_angdist =0.996920, Error =29791.287092
+GC_angdist =0.999899, Centroid_angdist =0.996920, Error =29792.877990
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.998686, Error =11666.725577
+GC_angdist =0.999896, Centroid_angdist =0.998686, Error =12098.280226
+GC_angdist =0.999896, Centroid_angdist =0.998686, Error =12097.267358
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.997290, Error =24299.415734
+GC_angdist =0.999720, Centroid_angdist =0.997290, Error =24301.509466
+GC_angdist =0.999795, Centroid_angdist =0.997290, Error =25052.624218
+GC_angdist =0.999859, Centroid_angdist =0.997290, Error =25688.784041
+GC_angdist =0.999931, Centroid_angdist =0.997290, Error =26410.541147
+GC_angdist =0.999945, Centroid_angdist =0.997290, Error =26554.129061
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.997647, Error =21527.606654
+GC_angdist =0.999945, Centroid_angdist =0.997647, Error =22984.840867
+GC_angdist =0.999980, Centroid_angdist =0.997647, Error =23329.491585
+GC_angdist =0.999982, Centroid_angdist =0.997647, Error =23354.265932
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.996942, Error =27300.575722
+GC_angdist =0.999795, Centroid_angdist =0.996942, Error =28532.657355
+GC_angdist =0.999899, Centroid_angdist =0.996942, Error =29571.075144
+GC_angdist =0.999899, Centroid_angdist =0.996942, Error =29572.666041
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.998701, Error =11517.694846
+GC_angdist =0.999896, Centroid_angdist =0.998701, Error =11949.249495
+GC_angdist =0.999896, Centroid_angdist =0.998701, Error =11948.236626
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.997321, Error =23983.432634
+GC_angdist =0.999720, Centroid_angdist =0.997321, Error =23985.526367
+GC_angdist =0.999795, Centroid_angdist =0.997321, Error =24736.641118
+GC_angdist =0.999859, Centroid_angdist =0.997321, Error =25372.800941
+GC_angdist =0.999931, Centroid_angdist =0.997321, Error =26094.558047
+GC_angdist =0.999945, Centroid_angdist =0.997321, Error =26238.145961
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998230, Error =15690.162165
+GC_angdist =0.999945, Centroid_angdist =0.998230, Error =17147.396378
+GC_angdist =0.999980, Centroid_angdist =0.998230, Error =17492.047097
+GC_angdist =0.999982, Centroid_angdist =0.998230, Error =17516.821444
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.997630, Error =20422.692101
+GC_angdist =0.999795, Centroid_angdist =0.997630, Error =21654.773735
+GC_angdist =0.999899, Centroid_angdist =0.997630, Error =22693.191523
+GC_angdist =0.999899, Centroid_angdist =0.997630, Error =22694.782421
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999135, Error =7179.648447
+GC_angdist =0.999896, Centroid_angdist =0.999135, Error =7611.203096
+GC_angdist =0.999896, Centroid_angdist =0.999135, Error =7610.190228
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.997964, Error =17556.128567
+GC_angdist =0.999720, Centroid_angdist =0.997964, Error =17558.222300
+GC_angdist =0.999795, Centroid_angdist =0.997964, Error =18309.337051
+GC_angdist =0.999859, Centroid_angdist =0.997964, Error =18945.496874
+GC_angdist =0.999931, Centroid_angdist =0.997964, Error =19667.253980
+GC_angdist =0.999945, Centroid_angdist =0.997964, Error =19810.841894
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.994138, Error =56611.417512
+GC_angdist =0.999945, Centroid_angdist =0.994138, Error =58068.651724
+GC_angdist =0.999980, Centroid_angdist =0.994138, Error =58413.302443
+GC_angdist =0.999982, Centroid_angdist =0.994138, Error =58438.076790
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.996110, Error =35617.324421
+GC_angdist =0.999795, Centroid_angdist =0.996110, Error =36849.406054
+GC_angdist =0.999899, Centroid_angdist =0.996110, Error =37887.823842
+GC_angdist =0.999899, Centroid_angdist =0.996110, Error =37889.414740
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.996720, Error =31321.111727
+GC_angdist =0.999896, Centroid_angdist =0.996720, Error =31752.666376
+GC_angdist =0.999896, Centroid_angdist =0.996720, Error =31751.653508
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.994697, Error =50226.807732
+GC_angdist =0.999720, Centroid_angdist =0.994697, Error =50228.901465
+GC_angdist =0.999795, Centroid_angdist =0.994697, Error =50980.016216
+GC_angdist =0.999859, Centroid_angdist =0.994697, Error =51616.176039
+GC_angdist =0.999931, Centroid_angdist =0.994697, Error =52337.933145
+GC_angdist =0.999945, Centroid_angdist =0.994697, Error =52481.521060
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999049, Error =7500.786455
+GC_angdist =0.999945, Centroid_angdist =0.999049, Error =8958.020668
+GC_angdist =0.999980, Centroid_angdist =0.999049, Error =9302.671387
+GC_angdist =0.999982, Centroid_angdist =0.999049, Error =9327.445733
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.999080, Error =5923.201253
+GC_angdist =0.999795, Centroid_angdist =0.999080, Error =7155.282887
+GC_angdist =0.999899, Centroid_angdist =0.999080, Error =8193.700675
+GC_angdist =0.999899, Centroid_angdist =0.999080, Error =8195.291573
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999853, Error =0.626361
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998159, Error =16404.666928
+GC_angdist =0.999945, Centroid_angdist =0.998159, Error =17861.901141
+GC_angdist =0.999980, Centroid_angdist =0.998159, Error =18206.551859
+GC_angdist =0.999982, Centroid_angdist =0.998159, Error =18231.326206
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.997849, Error =18226.257439
+GC_angdist =0.999795, Centroid_angdist =0.997849, Error =19458.339072
+GC_angdist =0.999899, Centroid_angdist =0.997849, Error =20496.756861
+GC_angdist =0.999899, Centroid_angdist =0.997849, Error =20498.347758
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999247, Error =6059.736742
+GC_angdist =0.999896, Centroid_angdist =0.999247, Error =6491.291391
+GC_angdist =0.999896, Centroid_angdist =0.999247, Error =6490.278523
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.997987, Error =17329.247508
+GC_angdist =0.999720, Centroid_angdist =0.997987, Error =17331.341241
+GC_angdist =0.999795, Centroid_angdist =0.997987, Error =18082.455992
+GC_angdist =0.999859, Centroid_angdist =0.997987, Error =18718.615815
+GC_angdist =0.999931, Centroid_angdist =0.997987, Error =19440.372921
+GC_angdist =0.999945, Centroid_angdist =0.997987, Error =19583.960836
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999312, Error =4873.497136
+GC_angdist =0.999945, Centroid_angdist =0.999312, Error =6330.731349
+GC_angdist =0.999980, Centroid_angdist =0.999312, Error =6675.382067
+GC_angdist =0.999982, Centroid_angdist =0.999312, Error =6700.156414
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.999561, Error =1104.954762
+GC_angdist =0.999795, Centroid_angdist =0.999561, Error =2337.036395
+GC_angdist =0.999899, Centroid_angdist =0.999561, Error =3375.454183
+GC_angdist =0.999899, Centroid_angdist =0.999561, Error =3377.045081
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999959, Error =1062.000732
+GC_angdist =0.999896, Centroid_angdist =0.999959, Error =630.446083
+GC_angdist =0.999896, Centroid_angdist =0.999959, Error =631.458952
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.999414, Error =3058.353605
+GC_angdist =0.999720, Centroid_angdist =0.999414, Error =3060.447338
+GC_angdist =0.999795, Centroid_angdist =0.999414, Error =3811.562089
+GC_angdist =0.999859, Centroid_angdist =0.999414, Error =4447.721912
+GC_angdist =0.999931, Centroid_angdist =0.999414, Error =5169.479018
+GC_angdist =0.999945, Centroid_angdist =0.999414, Error =5313.066932
+newMatched_stars: 2
+Identify new stars entering the FOV
+Frame18: TM succees
+
+Common Stars: 4
+Matched stars = 2 4530.000000 409.000000 409.000000 31.000000
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999540, Error =2593.667255
+GC_angdist =0.999945, Centroid_angdist =0.999540, Error =4050.901468
+GC_angdist =0.999980, Centroid_angdist =0.999540, Error =4395.552186
+GC_angdist =0.999982, Centroid_angdist =0.999540, Error =4420.326533
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999896, Error =430.835154
+GC_angdist =0.999896, Centroid_angdist =0.999896, Error =0.719494
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.996985, Error =28140.573359
+GC_angdist =0.999945, Centroid_angdist =0.996985, Error =29597.807572
+GC_angdist =0.999980, Centroid_angdist =0.996985, Error =29942.458290
+GC_angdist =0.999982, Centroid_angdist =0.996985, Error =29967.232637
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.998231, Error =16220.245906
+GC_angdist =0.999896, Centroid_angdist =0.998231, Error =16651.800555
+GC_angdist =0.999896, Centroid_angdist =0.998231, Error =16650.787686
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998256, Error =15436.978414
+GC_angdist =0.999945, Centroid_angdist =0.998256, Error =16894.212627
+GC_angdist =0.999980, Centroid_angdist =0.998256, Error =17238.863346
+GC_angdist =0.999982, Centroid_angdist =0.998256, Error =17263.637692
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999130, Error =7229.144075
+GC_angdist =0.999896, Centroid_angdist =0.999130, Error =7660.698724
+GC_angdist =0.999896, Centroid_angdist =0.999130, Error =7659.685856
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.997613, Error =21864.574622
+GC_angdist =0.999945, Centroid_angdist =0.997613, Error =23321.808835
+GC_angdist =0.999980, Centroid_angdist =0.997613, Error =23666.459553
+GC_angdist =0.999982, Centroid_angdist =0.997613, Error =23691.233900
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.998686, Error =11664.979498
+GC_angdist =0.999896, Centroid_angdist =0.998686, Error =12096.534147
+GC_angdist =0.999896, Centroid_angdist =0.998686, Error =12095.521279
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.997647, Error =21525.956511
+GC_angdist =0.999945, Centroid_angdist =0.997647, Error =22983.190724
+GC_angdist =0.999980, Centroid_angdist =0.997647, Error =23327.841442
+GC_angdist =0.999982, Centroid_angdist =0.997647, Error =23352.615789
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.998700, Error =11523.805333
+GC_angdist =0.999896, Centroid_angdist =0.998700, Error =11955.359982
+GC_angdist =0.999896, Centroid_angdist =0.998700, Error =11954.347113
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998231, Error =15688.016218
+GC_angdist =0.999945, Centroid_angdist =0.998231, Error =17145.250431
+GC_angdist =0.999980, Centroid_angdist =0.998231, Error =17489.901149
+GC_angdist =0.999982, Centroid_angdist =0.998231, Error =17514.675496
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999135, Error =7179.304927
+GC_angdist =0.999896, Centroid_angdist =0.999135, Error =7610.859576
+GC_angdist =0.999896, Centroid_angdist =0.999135, Error =7609.846707
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.994138, Error =56618.920098
+GC_angdist =0.999945, Centroid_angdist =0.994138, Error =58076.154311
+GC_angdist =0.999980, Centroid_angdist =0.994138, Error =58420.805029
+GC_angdist =0.999982, Centroid_angdist =0.994138, Error =58445.579376
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.996720, Error =31321.210705
+GC_angdist =0.999896, Centroid_angdist =0.996720, Error =31752.765354
+GC_angdist =0.999896, Centroid_angdist =0.996720, Error =31751.752485
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999049, Error =7502.247846
+GC_angdist =0.999945, Centroid_angdist =0.999049, Error =8959.482059
+GC_angdist =0.999980, Centroid_angdist =0.999049, Error =9304.132777
+GC_angdist =0.999982, Centroid_angdist =0.999049, Error =9328.907124
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999852, Error =1.349067
+GC_angdist =0.999896, Centroid_angdist =0.999852, Error =432.903716
+GC_angdist =0.999896, Centroid_angdist =0.999852, Error =431.890848
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999312, Error =4871.351949
+GC_angdist =0.999945, Centroid_angdist =0.999312, Error =6328.586162
+GC_angdist =0.999980, Centroid_angdist =0.999312, Error =6673.236881
+GC_angdist =0.999982, Centroid_angdist =0.999312, Error =6698.011227
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999959, Error =1063.295738
+GC_angdist =0.999896, Centroid_angdist =0.999959, Error =631.741089
+GC_angdist =0.999896, Centroid_angdist =0.999959, Error =632.753958
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998655, Error =11446.550851
+GC_angdist =0.999945, Centroid_angdist =0.998655, Error =12903.785063
+GC_angdist =0.999980, Centroid_angdist =0.998655, Error =13248.435782
+GC_angdist =0.999982, Centroid_angdist =0.998655, Error =13273.210129
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999385, Error =4676.597072
+GC_angdist =0.999896, Centroid_angdist =0.999385, Error =5108.151721
+GC_angdist =0.999896, Centroid_angdist =0.999385, Error =5107.138853
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.993935, Error =58646.690307
+GC_angdist =0.999945, Centroid_angdist =0.993935, Error =60103.924520
+GC_angdist =0.999980, Centroid_angdist =0.993935, Error =60448.575238
+GC_angdist =0.999982, Centroid_angdist =0.993935, Error =60473.349585
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.996584, Error =32687.387995
+GC_angdist =0.999896, Centroid_angdist =0.996584, Error =33118.942643
+GC_angdist =0.999896, Centroid_angdist =0.996584, Error =33117.929775
+newMatched_stars: 1
+Identify new stars entering the FOV
+Frame19: TM succees
+
+Common Stars: 4
+Matched stars = 1 4530.000000 409.000000 409.000000 31.000000
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999540, Error =2595.684042
+GC_angdist =0.999945, Centroid_angdist =0.999540, Error =4052.918255
+GC_angdist =0.999980, Centroid_angdist =0.999540, Error =4397.568973
+GC_angdist =0.999982, Centroid_angdist =0.999540, Error =4422.343320
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.996980, Error =28193.465048
+GC_angdist =0.999945, Centroid_angdist =0.996980, Error =29650.699261
+GC_angdist =0.999980, Centroid_angdist =0.996980, Error =29995.349980
+GC_angdist =0.999982, Centroid_angdist =0.996980, Error =30020.124327
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999597, Error =2023.945431
+GC_angdist =0.999945, Centroid_angdist =0.999597, Error =3481.179644
+GC_angdist =0.999980, Centroid_angdist =0.999597, Error =3825.830362
+GC_angdist =0.999982, Centroid_angdist =0.999597, Error =3850.604709
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.996860, Error =29395.185361
+GC_angdist =0.999945, Centroid_angdist =0.996860, Error =30852.419574
+GC_angdist =0.999980, Centroid_angdist =0.996860, Error =31197.070292
+GC_angdist =0.999982, Centroid_angdist =0.996860, Error =31221.844639
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998255, Error =15448.950119
+GC_angdist =0.999945, Centroid_angdist =0.998255, Error =16906.184331
+GC_angdist =0.999980, Centroid_angdist =0.998255, Error =17250.835050
+GC_angdist =0.999982, Centroid_angdist =0.998255, Error =17275.609397
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.997611, Error =21882.301927
+GC_angdist =0.999945, Centroid_angdist =0.997611, Error =23339.536140
+GC_angdist =0.999980, Centroid_angdist =0.997611, Error =23684.186859
+GC_angdist =0.999982, Centroid_angdist =0.997611, Error =23708.961206
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.997646, Error =21538.705453
+GC_angdist =0.999945, Centroid_angdist =0.997646, Error =22995.939665
+GC_angdist =0.999980, Centroid_angdist =0.997646, Error =23340.590384
+GC_angdist =0.999982, Centroid_angdist =0.997646, Error =23365.364731
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998229, Error =15706.299742
+GC_angdist =0.999945, Centroid_angdist =0.998229, Error =17163.533955
+GC_angdist =0.999980, Centroid_angdist =0.998229, Error =17508.184674
+GC_angdist =0.999982, Centroid_angdist =0.998229, Error =17532.959020
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999049, Error =7507.907333
+GC_angdist =0.999945, Centroid_angdist =0.999049, Error =8965.141546
+GC_angdist =0.999980, Centroid_angdist =0.999049, Error =9309.792265
+GC_angdist =0.999982, Centroid_angdist =0.999049, Error =9334.566612
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.994135, Error =56643.883084
+GC_angdist =0.999945, Centroid_angdist =0.994135, Error =58101.117297
+GC_angdist =0.999980, Centroid_angdist =0.994135, Error =58445.768015
+GC_angdist =0.999982, Centroid_angdist =0.994135, Error =58470.542362
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998654, Error =11454.116068
+GC_angdist =0.999945, Centroid_angdist =0.998654, Error =12911.350280
+GC_angdist =0.999980, Centroid_angdist =0.998654, Error =13256.000999
+GC_angdist =0.999982, Centroid_angdist =0.998654, Error =13280.775346
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.997445, Error =23545.165324
+GC_angdist =0.999945, Centroid_angdist =0.997445, Error =25002.399537
+GC_angdist =0.999980, Centroid_angdist =0.997445, Error =25347.050255
+GC_angdist =0.999982, Centroid_angdist =0.997445, Error =25371.824602
+newMatched_stars: 0
+Identify new stars entering the FOV
+Frame20: TM succees
+
+Common Stars: 1
+Frame21: TM Failed. Calling LISM
+
+Segmentation fault
+
+**************************************************
+
+GC_angdist =0.999980, Centroid_angdist =0.998256, Error =17233.359694
+GC_angdist =0.999982, Centroid_angdist =0.998256, Error =17258.134041
+curr_star_id2436
+GC_angdist =0.999982, Centroid_angdist =0.997902, Error =20803.429161
+GC_angdist =0.999863, Centroid_angdist =0.997902, Error =19608.070839
+GC_angdist =0.999931, Centroid_angdist =0.997902, Error =20290.416181
+GC_angdist =0.999964, Centroid_angdist =0.997902, Error =20626.335950
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.997622, Error =20502.931178
+GC_angdist =0.999795, Centroid_angdist =0.997622, Error =21735.012812
+GC_angdist =0.999899, Centroid_angdist =0.997622, Error =22773.430600
+GC_angdist =0.999899, Centroid_angdist =0.997622, Error =22775.021498
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999130, Error =7227.923013
+GC_angdist =0.999896, Centroid_angdist =0.999130, Error =7659.477661
+GC_angdist =0.999896, Centroid_angdist =0.999130, Error =7658.464793
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.997980, Error =17399.486380
+GC_angdist =0.999720, Centroid_angdist =0.997980, Error =17401.580112
+GC_angdist =0.999795, Centroid_angdist =0.997980, Error =18152.694864
+GC_angdist =0.999859, Centroid_angdist =0.997980, Error =18788.854687
+GC_angdist =0.999931, Centroid_angdist =0.997980, Error =19510.611793
+GC_angdist =0.999945, Centroid_angdist =0.997980, Error =19654.199707
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998231, Error =15686.197308
+GC_angdist =0.999945, Centroid_angdist =0.998231, Error =17143.431521
+GC_angdist =0.999980, Centroid_angdist =0.998231, Error =17488.082240
+GC_angdist =0.999982, Centroid_angdist =0.998231, Error =17512.856587
+curr_star_id2436
+GC_angdist =0.999982, Centroid_angdist =0.997872, Error =21102.669412
+GC_angdist =0.999863, Centroid_angdist =0.997872, Error =19907.311090
+GC_angdist =0.999931, Centroid_angdist =0.997872, Error =20589.656433
+GC_angdist =0.999964, Centroid_angdist =0.997872, Error =20925.576201
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.997629, Error =20427.819454
+GC_angdist =0.999795, Centroid_angdist =0.997629, Error =21659.901087
+GC_angdist =0.999899, Centroid_angdist =0.997629, Error =22698.318876
+GC_angdist =0.999899, Centroid_angdist =0.997629, Error =22699.909773
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999134, Error =7182.328510
+GC_angdist =0.999896, Centroid_angdist =0.999134, Error =7613.883158
+GC_angdist =0.999896, Centroid_angdist =0.999134, Error =7612.870290
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.997964, Error =17558.264148
+GC_angdist =0.999720, Centroid_angdist =0.997964, Error =17560.357880
+GC_angdist =0.999795, Centroid_angdist =0.997964, Error =18311.472632
+GC_angdist =0.999859, Centroid_angdist =0.997964, Error =18947.632454
+GC_angdist =0.999931, Centroid_angdist =0.997964, Error =19669.389560
+GC_angdist =0.999945, Centroid_angdist =0.997964, Error =19812.977475
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999980, Error =1802.422782
+GC_angdist =0.999945, Centroid_angdist =0.999980, Error =345.188569
+GC_angdist =0.999980, Centroid_angdist =0.999980, Error =0.537851
+matched_stars =2 SNT_star = 2377 fe_id =13.000000, star_id =-0.000521 
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.994137, Error =56621.010253
+GC_angdist =0.999945, Centroid_angdist =0.994137, Error =58078.244466
+GC_angdist =0.999980, Centroid_angdist =0.994137, Error =58422.895184
+GC_angdist =0.999982, Centroid_angdist =0.994137, Error =58447.669531
+curr_star_id2436
+GC_angdist =0.999982, Centroid_angdist =0.993598, Error =63844.820595
+GC_angdist =0.999863, Centroid_angdist =0.993598, Error =62649.462273
+GC_angdist =0.999931, Centroid_angdist =0.993598, Error =63331.807615
+GC_angdist =0.999964, Centroid_angdist =0.993598, Error =63667.727384
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.996110, Error =35620.737511
+GC_angdist =0.999795, Centroid_angdist =0.996110, Error =36852.819144
+GC_angdist =0.999899, Centroid_angdist =0.996110, Error =37891.236933
+GC_angdist =0.999899, Centroid_angdist =0.996110, Error =37892.827830
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.996721, Error =31319.851163
+GC_angdist =0.999896, Centroid_angdist =0.996721, Error =31751.405812
+GC_angdist =0.999896, Centroid_angdist =0.996721, Error =31750.392943
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.994697, Error =50226.089450
+GC_angdist =0.999720, Centroid_angdist =0.994697, Error =50228.183183
+GC_angdist =0.999795, Centroid_angdist =0.994697, Error =50979.297934
+GC_angdist =0.999859, Centroid_angdist =0.994697, Error =51615.457757
+GC_angdist =0.999931, Centroid_angdist =0.994697, Error =52337.214863
+GC_angdist =0.999945, Centroid_angdist =0.994697, Error =52480.802777
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999050, Error =7491.185202
+GC_angdist =0.999945, Centroid_angdist =0.999050, Error =8948.419415
+GC_angdist =0.999980, Centroid_angdist =0.999050, Error =9293.070133
+GC_angdist =0.999982, Centroid_angdist =0.999050, Error =9317.844480
+curr_star_id2436
+GC_angdist =0.999982, Centroid_angdist =0.998776, Error =12065.760638
+GC_angdist =0.999863, Centroid_angdist =0.998776, Error =10870.402316
+GC_angdist =0.999931, Centroid_angdist =0.998776, Error =11552.747658
+GC_angdist =0.999964, Centroid_angdist =0.998776, Error =11888.667427
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.999080, Error =5920.528250
+GC_angdist =0.999795, Centroid_angdist =0.999080, Error =7152.609883
+GC_angdist =0.999899, Centroid_angdist =0.999080, Error =8191.027671
+GC_angdist =0.999899, Centroid_angdist =0.999080, Error =8192.618569
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999853, Error =1.792365
+GC_angdist =0.999896, Centroid_angdist =0.999853, Error =429.762284
+GC_angdist =0.999896, Centroid_angdist =0.999853, Error =428.749415
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.999047, Error =6731.617384
+GC_angdist =0.999720, Centroid_angdist =0.999047, Error =6733.711117
+GC_angdist =0.999795, Centroid_angdist =0.999047, Error =7484.825869
+GC_angdist =0.999859, Centroid_angdist =0.999047, Error =8120.985691
+GC_angdist =0.999931, Centroid_angdist =0.999047, Error =8842.742797
+GC_angdist =0.999945, Centroid_angdist =0.999047, Error =8986.330712
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.998160, Error =16394.631348
+GC_angdist =0.999945, Centroid_angdist =0.998160, Error =17851.865561
+GC_angdist =0.999980, Centroid_angdist =0.998160, Error =18196.516279
+GC_angdist =0.999982, Centroid_angdist =0.998160, Error =18221.290626
+curr_star_id2436
+GC_angdist =0.999982, Centroid_angdist =0.997782, Error =21998.998368
+GC_angdist =0.999863, Centroid_angdist =0.997782, Error =20803.640046
+GC_angdist =0.999931, Centroid_angdist =0.997782, Error =21485.985389
+GC_angdist =0.999964, Centroid_angdist =0.997782, Error =21821.905157
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.997849, Error =18223.962207
+GC_angdist =0.999795, Centroid_angdist =0.997849, Error =19456.043840
+GC_angdist =0.999899, Centroid_angdist =0.997849, Error =20494.461629
+GC_angdist =0.999899, Centroid_angdist =0.997849, Error =20496.052526
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999247, Error =6057.708593
+GC_angdist =0.999896, Centroid_angdist =0.999247, Error =6489.263242
+GC_angdist =0.999896, Centroid_angdist =0.999247, Error =6488.250374
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.997987, Error =17323.198196
+GC_angdist =0.999720, Centroid_angdist =0.997987, Error =17325.291929
+GC_angdist =0.999795, Centroid_angdist =0.997987, Error =18076.406680
+GC_angdist =0.999859, Centroid_angdist =0.997987, Error =18712.566503
+GC_angdist =0.999931, Centroid_angdist =0.997987, Error =19434.323609
+GC_angdist =0.999945, Centroid_angdist =0.997987, Error =19577.911523
+curr_star_id4530
+GC_angdist =0.999799, Centroid_angdist =0.999312, Error =4874.623385
+GC_angdist =0.999945, Centroid_angdist =0.999312, Error =6331.857598
+GC_angdist =0.999980, Centroid_angdist =0.999312, Error =6676.508316
+GC_angdist =0.999982, Centroid_angdist =0.999312, Error =6701.282663
+curr_star_id2436
+GC_angdist =0.999982, Centroid_angdist =0.999097, Error =8854.698065
+GC_angdist =0.999863, Centroid_angdist =0.999097, Error =7659.339743
+GC_angdist =0.999931, Centroid_angdist =0.999097, Error =8341.685085
+GC_angdist =0.999964, Centroid_angdist =0.999097, Error =8677.604853
+curr_star_id1500
+GC_angdist =0.999672, Centroid_angdist =0.999561, Error =1111.337555
+GC_angdist =0.999795, Centroid_angdist =0.999561, Error =2343.419188
+GC_angdist =0.999899, Centroid_angdist =0.999561, Error =3381.836977
+GC_angdist =0.999899, Centroid_angdist =0.999561, Error =3383.427874
+curr_star_id409
+GC_angdist =0.999853, Centroid_angdist =0.999959, Error =1062.814827
+GC_angdist =0.999896, Centroid_angdist =0.999959, Error =631.260179
+GC_angdist =0.999896, Centroid_angdist =0.999959, Error =632.273047
+curr_star_id31
+GC_angdist =0.999720, Centroid_angdist =0.999414, Error =3059.373592
+GC_angdist =0.999720, Centroid_angdist =0.999414, Error =3061.467324
+GC_angdist =0.999795, Centroid_angdist =0.999414, Error =3812.582076
+GC_angdist =0.999859, Centroid_angdist =0.999414, Error =4448.741898
+GC_angdist =0.999931, Centroid_angdist =0.999414, Error =5170.499004
+GC_angdist =0.999945, Centroid_angdist =0.999414, Error =5314.086919
+newMatched_stars: 2
+Identify new stars entering the FOV
+Frame14: TM succees

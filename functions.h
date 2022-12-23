@@ -174,7 +174,8 @@ int already_matched(int sm_IS[][2], int indx)
 }
 
 void sm_4_star(double four_stars[][4], double sm_3D_vecs[][4], int sm_IS[][2], double body_vecs_IS[][4], int sm_K_vec_arr[][3], int *N_match, int N_i, double q, double m)
-{   
+{ 
+    printf("entered sm_4_star\n");  
     int i=0;
     int j=0;
     int k=0;
@@ -258,7 +259,7 @@ void sm_4_star(double four_stars[][4], double sm_3D_vecs[][4], int sm_IS[][2], d
         }
     }
     
-    
+    printf("check segmentation_fault sm4star\n");
     for (j = 0; j < 4; j++)
     {
         int matched_rows = 0;
@@ -331,6 +332,7 @@ void sm_4_star(double four_stars[][4], double sm_3D_vecs[][4], int sm_IS[][2], d
                 }
             }
         }
+        printf("end check sm4star\n");
     }
     
 }
@@ -444,7 +446,8 @@ void LISM(double centroids_st[MAX_STARS][3], int tot_stars, double data[3][MAX_S
     int i = 1;
     for (i = 1; i <= N_max; i++){
         
-            if (N_uis >= 4 && N_is < N_th){
+        if (N_uis >= 4 && N_is < N_th){
+                printf("start_if\n");
             // Variable for storing the number of stars matched in a particular iteration    
             int N_match = 0;
 
@@ -467,18 +470,19 @@ void LISM(double centroids_st[MAX_STARS][3], int tot_stars, double data[3][MAX_S
 
             // Perform 4 star N star algorithm
             sm_4_star(four_stars, sm_3D_vecs, sm_IS, body_vecs_IS, sm_K_vec_arr, &N_match, N_i, q, m);
+            printf("N_match = %d\n", N_match);
+            printf("finished 4 star matching\n");
 
             // Decrement matched stars from those detected from FE block for next iteration
             N_uis -= N_match;
-
+            printf("N_uis= %d\n", N_uis);
             // Increment identified stars with matched stars
             N_is += N_match;
-
             // If no star is detected or we have not circulated the sm_3D_vecs exhaustively
             if (N_match == 0 && N_circ <= 2 * N_i){
 
                 sm_4_star_circulate(sm_3D_vecs, &N_circ, N_i);
-            
+                printf("sm4star_circulate\n");
                 if (N_circ >= 2 * N_i){
                     break;
                 }
@@ -490,9 +494,9 @@ void LISM(double centroids_st[MAX_STARS][3], int tot_stars, double data[3][MAX_S
             break;
         }
     }
-
+    printf("going to verification\n");
     sm_validate(sm_3D_vecs, sm_IS, body_vecs_IS, sm_GC, &N_is, N_i, tol, p_1, p_2);
-
+    printf("Verification_passed\n");
     // Index variable for organising SM output
     int data_index = 0;
 
@@ -754,9 +758,9 @@ double gc_id_angdist(int star_id_1, int star_id_2)
 {
     double dot, norm1, norm2, id_dist;
 
-    dot = sm_GC[star_id_1][1]*sm_GC[star_id_2][1] + sm_GC[star_id_1][2]*sm_GC[star_id_2][2] + sm_GC[star_id_1][3]*sm_GC[star_id_2][3];
-    norm1 = sqrt(sm_GC[star_id_1][1]*sm_GC[star_id_1][1] + sm_GC[star_id_1][2]*sm_GC[star_id_1][2] + sm_GC[star_id_1][3]*sm_GC[star_id_1][3]);
-    norm2 = sqrt(sm_GC[star_id_2][1]*sm_GC[star_id_2][1] + sm_GC[star_id_2][2]*sm_GC[star_id_2][2] + sm_GC[star_id_2][3]*sm_GC[star_id_2][3]);
+    dot = sm_GC[star_id_1 - 1][1]*sm_GC[star_id_2 - 1][1] + sm_GC[star_id_1 - 1][2]*sm_GC[star_id_2 - 1][2] + sm_GC[star_id_1 - 1][3]*sm_GC[star_id_2 -1][3];
+    norm1 = sqrt(sm_GC[star_id_1 - 1][1]*sm_GC[star_id_1 - 1][1] + sm_GC[star_id_1 - 1][2]*sm_GC[star_id_1 - 1][2] + sm_GC[star_id_1 - 1][3]*sm_GC[star_id_1 - 1][3]);
+    norm2 = sqrt(sm_GC[star_id_2 - 1][1]*sm_GC[star_id_2 - 1][1] + sm_GC[star_id_2 - 1][2]*sm_GC[star_id_2 - 1][2] + sm_GC[star_id_2 - 1][3]*sm_GC[star_id_2 - 1][3]);
 
     id_dist = dot/(norm1*norm2);
     return id_dist;
@@ -829,7 +833,7 @@ int radiusBasedMatching(int common_stars, int next_tot_stars, double predicted_c
     return (matched);
 }
 
-void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3],int next_tot_stars,int sm_SNT[5060][11],double sm_GC[][4],double newEntries[][4], int* new_matched_stars)
+void starNeighbourhoodMatch(double RBM_matched[][4], int RBM_matched_stars, double next_centroids_st[][3],int next_tot_stars,int sm_SNT[5060][11],double sm_GC[][4],double newEntries[][4], int* new_matched_stars)
 {
     double fe_unmatched[next_tot_stars][3];
     int num_unmatched = 0;
@@ -851,6 +855,7 @@ void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3
             fe_unmatched[num_unmatched][0] = next_centroids_st[j][0];
             fe_unmatched[num_unmatched][1] = next_centroids_st[j][1];
             fe_unmatched[num_unmatched][2] = next_centroids_st[j][2];
+            // printf("%f %f %f\n", fe_unmatched[num_unmatched][0],fe_unmatched[num_unmatched][1],fe_unmatched[num_unmatched][2]);
             num_unmatched++;
         }
     }
@@ -861,9 +866,11 @@ void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3
     for (i_unmatch = 0; i_unmatch < num_unmatched; i_unmatch++)
     {
         bool done = false;
-        for (int i = 0; i < next_tot_stars; i++)
+        for (int i = 0; i < RBM_matched_stars; i++)
         {
             int curr_ref_star = RBM_matched[i][1];  //star_id
+            // printf("curr_star_id%d\n", curr_ref_star);
+
             if (curr_ref_star > 5060) continue;     //becz we don't have SNT for N_GC=8876 yet
             if (matched_stars == Nth - next_tot_stars) break;
 
@@ -875,12 +882,21 @@ void starNeighbourhoodMatch(double RBM_matched[][4],double next_centroids_st[][3
                 double x2 = fe_unmatched[i_unmatch][1];
                 double y2 = fe_unmatched[i_unmatch][2];
 
-                if(gc_id_angdist(curr_ref_star, sm_SNT[curr_ref_star][1]) == centroid_angdist(x1, y1, x2, y2))
+                double GC_ID_angdist = gc_id_angdist(curr_ref_star, sm_SNT[curr_ref_star - 1][j]);
+                double Centroid_angdist = centroid_angdist(x1, y1, x2, y2);
+                double error = absoluteValue(GC_ID_angdist - Centroid_angdist);
+
+                if (10e6 * error < 100)
+                printf("GC_angdist =%f, Centroid_angdist =%f, Error =%f\n", GC_ID_angdist, Centroid_angdist, 10e6 * error);
+
+                if(10e6*error < 2)
                 {
                     newEntries[matched_stars][0] = fe_unmatched[i_unmatch][0];
-                    newEntries[matched_stars][1] = sm_SNT[curr_ref_star][1];
+                    newEntries[matched_stars][1] = sm_SNT[curr_ref_star - 1][j];
                     newEntries[matched_stars][2] = fe_unmatched[i_unmatch][1];
                     newEntries[matched_stars][3] = fe_unmatched[i_unmatch][2];
+                    printf("matched_stars =%d SNT_star = %d ", matched_stars, sm_SNT[curr_ref_star - 1][j]);
+                    printf("fe_id =%f, star_id =%f \n\n", newEntries[matched_stars][0], newEntries[matched_stars][1]);
                     matched_stars++;
                     done = true;
                 }

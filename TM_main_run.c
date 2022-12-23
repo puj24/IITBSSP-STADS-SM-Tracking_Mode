@@ -216,12 +216,32 @@ int main()
             }
 
             if(! TM_on)
-            {   
+            {  
+                for(int i = 0; i < MAX_STARS; i++)
+                {
+                    curr_input_ids[i] = 0;
+                    curr_star_ids[i] = 0;
+                    curr_data[0][i] = 0;
+                    curr_data[1][i] = 0;
+                    curr_data[2][i] = 0;
+                }
+                curr_matched_stars = 0;
+                LISM(curr_centroids_st, curr_tot_stars, curr_data, curr_input_ids, curr_star_ids, &curr_matched_stars);
+                printf("\nLISM seg fault check0\n");
+
+                for(int i = 0; i < MAX_STARS; i++)
+                {
+                    printf("%d ", curr_input_ids[i]);
+                    printf("%d ",curr_star_ids[i]);
+                }
                 printf("Frame%d: TM Failed. Calling LISM\n\n", frame + 1);
                 curr_matched_stars = 0;
                 
+                
+                //segmentation fault lies here
                 //LISM on current frame
                 LISM(curr_centroids_st, curr_tot_stars, curr_data, curr_input_ids, curr_star_ids, &curr_matched_stars);
+                printf("\nLISM seg fault check1\n");
             }
             else
             {   
@@ -244,41 +264,27 @@ int main()
         }
 
         if (frame == 99) break;
-        //variable to store common stars in both the frames
+        // printf("segmentation fault check\n");
         int common_stars = 0;
-
-        //array to store commmon stars
         double common_centroid_data[MAX_STARS][5];
 
         commonStars(&common_stars, prev_matched_stars, curr_matched_stars, prev_star_ids, prev_input_ids, curr_star_ids, curr_input_ids, prev_tot_stars, curr_tot_stars, prev_centroids_st, curr_centroids_st, common_centroid_data);
-
         printf("Common Stars: %d\n", common_stars);
 
+        next_frame = frame + 1;
+        frame ++;
+        next_tot_stars = 0;
+        short (*next_img) [810] = frames[next_frame];
+                       
+        //FE on the next frame
+        FE(next_img, next_centroids_st, &next_tot_stars);
         //--------------------------------------------------------------------------------------------------------------------
-
-        double predicted_centroids_st[common_stars][3];
 
         if(common_stars >= 2)
         {
             //predict next frame centroids based on the data of previous frame and next frame
+            double predicted_centroids_st[common_stars][3];
             predictCentroid(common_centroid_data, predicted_centroids_st, common_stars);
-
-            // for(int i = 0; i <  common_stars; i++)
-            // {   
-            //         printf("%.16f %.16f %.16f\n",  predicted_centroids_st[i][0], predicted_centroids_st[i][1], predicted_centroids_st[i][2]);                
-            // }
-
-            next_frame = frame + 1;
-            frame ++;
-            next_tot_stars = 0;
-            short (*next_img) [810] = frames[next_frame];
-                       
-            //FE on the next frame
-            FE(next_img, next_centroids_st, &next_tot_stars);
-
-            // for(int i = 0; i < next_tot_stars; i++){
-            //     printf("%d %.16f %.16f\n", (int)next_centroids_st[i][0], next_centroids_st[i][1], next_centroids_st[i][2]);
-            // }
 
             double RBM_centroid_st[MAX_STARS][4];
             int RBM_matched_stars = radiusBasedMatching(common_stars, next_tot_stars, predicted_centroids_st, next_centroids_st, RBM_centroid_st);
@@ -291,50 +297,57 @@ int main()
                 next_star_ids[i] = RBM_centroid_st[i][1];
             }
 
-            if(RBM_matched_stars > N_TH_TRACKING)
+            if(RBM_matched_stars >= N_TH_TRACKING)
             {  
                 //next data from sm_GC
                 for (int i = 0; i < MAX_STARS; i++)
                 {
-                    next_data[0][i] = sm_GC[next_star_ids[i]][1];
-                    next_data[1][i] = sm_GC[next_star_ids[i]][2];
-                    next_data[2][i] = sm_GC[next_star_ids[i]][3];
+                    next_data[0][i] = sm_GC[next_star_ids[i] - 1][1];
+                    next_data[1][i] = sm_GC[next_star_ids[i] - 1][2];
+                    next_data[2][i] = sm_GC[next_star_ids[i] - 1][3];
                 }
-
                 next_matched_stars = RBM_matched_stars;
                 TM_on = true;
                 printf("GO TO ESTIMAION\n");
             }
 
             else{
-
                 //need to update next_matched_stars, next_data
                 // from newEntries & RBM_match
                 int new_matched_stars = 0;
                 double newEntries[N_TH_TRACKING][4];
-                starNeighbourhoodMatch(RBM_centroid_st, next_centroids_st, next_tot_stars, sm_SNT, sm_GC, newEntries, &new_matched_stars);
+
+                for (int i = 0; i < RBM_matched_stars; i++)
+                    printf("%f ", RBM_centroid_st[i][1]);
+
+                starNeighbourhoodMatch(RBM_centroid_st, RBM_matched_stars, next_centroids_st, next_tot_stars, sm_SNT, sm_GC, newEntries, &new_matched_stars);
                 
                 printf("newMatched_stars: %d\n", new_matched_stars);
                 next_matched_stars = RBM_matched_stars + new_matched_stars;
 
+                printf("next_input_IDs: ");
                 for (int i = RBM_matched_stars; i < next_matched_stars; i++)
                 {
                     next_input_ids[i] = newEntries[i - RBM_matched_stars][0];
                     next_star_ids[i] = newEntries[i - RBM_matched_stars][1];
+                    printf("%d ", next_star_ids[i]);
                 }
+                printf("\n");
 
                 for (int i = 0; i < MAX_STARS; i++)
                 {
-                    next_data[0][i] = sm_GC[next_star_ids[i]][1];
-                    next_data[1][i] = sm_GC[next_star_ids[i]][2];
-                    next_data[2][i] = sm_GC[next_star_ids[i]][3];
+                    next_data[0][i] = sm_GC[next_star_ids[i] - 1][1];
+                    next_data[1][i] = sm_GC[next_star_ids[i] - 1][2];
+                    next_data[2][i] = sm_GC[next_star_ids[i] - 1][3];
                 }
                 printf("Identify new stars entering the FOV\n");
+
+                if (next_matched_stars < 5) TM_on = false;
+                else TM_on = true;
             }
 
         }
         else{
-            frame ++;
             TM_on = false;
             continue;
         }
