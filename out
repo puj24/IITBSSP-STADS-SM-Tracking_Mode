@@ -1,0 +1,499 @@
+Frame1: calling LISM
+
+Frame2: calling LISM
+
+Common Stars: 8
+Matched stars = 8 GO TO ESTIMAION
+Frame3: TM succees
+
+Common Stars: 8
+Matched stars = 8 GO TO ESTIMAION
+Frame4: TM succees
+
+Common Stars: 8
+Matched stars = 8 GO TO ESTIMAION
+Frame5: TM succees
+
+Common Stars: 8
+Matched stars = 8 GO TO ESTIMAION
+Frame6: TM succees
+
+Common Stars: 8
+Matched stars = 7 GO TO ESTIMAION
+Frame7: TM succees
+
+Common Stars: 7
+Matched stars = 7 GO TO ESTIMAION
+Frame8: TM succees
+
+Common Stars: 7
+Matched stars = 7 GO TO ESTIMAION
+Frame9: TM succees
+
+Common Stars: 7
+Matched stars = 7 GO TO ESTIMAION
+Frame10: TM succees
+
+Common Stars: 7
+Matched stars = 7 GO TO ESTIMAION
+Frame11: TM succees
+
+Common Stars: 7
+Matched stars = 7 GO TO ESTIMAION
+Frame12: TM succees
+
+Common Stars: 7
+Matched stars = 6 GO TO ESTIMAION
+Frame13: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame14: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame15: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame16: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame17: TM succees
+
+Common Stars: 6
+Matched stars = 4 GO TO ESTIMAION
+Frame18: TM succees
+
+Common Stars: 4
+Matched stars = 2 4530.000000 409.000000 GC_angdist =0.999896, Centroid_angdist =0.999896, Error =0.719494
+matched_stars =0 SNT_star = 633 fe_id =3.000000, star_id =633.000000 
+
+GC_angdist =0.999853, Centroid_angdist =0.999852, Error =1.349067
+matched_stars =1 SNT_star = 4915 fe_id =8.000000, star_id =4915.000000 
+
+GC_angdist =0.999959, Centroid_angdist =0.999959, Error =0.640816
+matched_stars =2 SNT_star = 6310 fe_id =5.000000, star_id =6310.000000 
+
+newMatched_stars: 3
+next_input_IDs: 633 4915 6310 
+Identify new stars entering the FOV
+Frame19: TM succees
+
+Common Stars: 2
+Matched stars = 2 4530.000000 409.000000 GC_angdist =0.999896, Centroid_angdist =0.999896, Error =0.465998
+matched_stars =0 SNT_star = 633 fe_id =3.000000, star_id =633.000000 
+
+GC_angdist =0.999853, Centroid_angdist =0.999852, Error =1.320551
+matched_stars =1 SNT_star = 4915 fe_id =8.000000, star_id =4915.000000 
+
+newMatched_stars: 2
+next_input_IDs: 633 4915 
+Identify new stars entering the FOV
+Frame20: TM succees
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame21: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame22: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame23: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame24: TM succees
+
+Common Stars: 3
+Matched stars = 2 409.000000 4915.000000 GC_angdist =0.999737, Centroid_angdist =0.999737, Error =1.377435
+matched_stars =0 SNT_star = 6155 fe_id =6.000000, star_id =6155.000000 
+
+GC_angdist =0.999959, Centroid_angdist =0.999959, Error =0.768028
+matched_stars =1 SNT_star = 6310 fe_id =2.000000, star_id =6310.000000 
+
+GC_angdist =0.999896, Centroid_angdist =0.999905, Error =94.604666
+GC_angdist =0.999905, Centroid_angdist =0.999905, Error =0.802372
+matched_stars =2 SNT_star = 8040 fe_id =3.000000, star_id =8040.000000 
+
+newMatched_stars: 3
+next_input_IDs: 6155 6310 8040 
+Identify new stars entering the FOV
+Frame25: TM succees
+
+Common Stars: 2
+Matched stars = 2 409.000000 4915.000000 GC_angdist =0.999959, Centroid_angdist =0.999959, Error =0.763755
+matched_stars =0 SNT_star = 6310 fe_id =2.000000, star_id =6310.000000 
+
+GC_angdist =0.999737, Centroid_angdist =0.999737, Error =1.489131
+matched_stars =1 SNT_star = 6155 fe_id =8.000000, star_id =6155.000000 
+
+GC_angdist =0.999896, Centroid_angdist =0.999905, Error =94.591244
+GC_angdist =0.999905, Centroid_angdist =0.999905, Error =0.815793
+matched_stars =2 SNT_star = 8040 fe_id =3.000000, star_id =8040.000000 
+
+newMatched_stars: 3
+next_input_IDs: 6310 6155 8040 
+Identify new stars entering the FOV
+Frame26: TM succees
+
+Common Stars: 5
+Matched stars = 4 GO TO ESTIMAION
+Frame27: TM succees
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame28: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame29: TM succees
+
+Common Stars: 3
+Matched stars = 2 6310.000000 8040.000000 newMatched_stars: 0
+next_input_IDs: 
+Identify new stars entering the FOV
+Frame30: TM Failed. Calling LISM
+
+Frame31: TM Failed. Calling LISM
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame32: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame33: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame34: TM succees
+
+Common Stars: 3
+Matched stars = 2 6817.000000 4345.000000 newMatched_stars: 0
+next_input_IDs: 
+Identify new stars entering the FOV
+Frame35: TM Failed. Calling LISM
+
+Frame36: TM Failed. Calling LISM
+
+Common Stars: 2
+Matched stars = 2 6817.000000 4345.000000 newMatched_stars: 0
+next_input_IDs: 
+Identify new stars entering the FOV
+Frame37: TM Failed. Calling LISM
+
+Frame38: TM Failed. Calling LISM
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame39: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame40: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame41: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame42: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame43: TM succees
+
+Common Stars: 3
+Matched stars = 2 6817.000000 4345.000000 newMatched_stars: 0
+next_input_IDs: 
+Identify new stars entering the FOV
+Frame44: TM Failed. Calling LISM
+
+Frame45: TM Failed. Calling LISM
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame46: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame47: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame48: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame49: TM succees
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame50: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame51: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame52: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame53: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame54: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame55: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame56: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame57: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame58: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame59: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame60: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame61: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame62: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame63: TM succees
+
+Common Stars: 3
+Matched stars = 2 2190.000000 1730.000000 GC_angdist =0.999900, Centroid_angdist =0.999904, Error =37.880679
+GC_angdist =0.999904, Centroid_angdist =0.999904, Error =1.075932
+matched_stars =0 SNT_star = 510 fe_id =1.000000, star_id =510.000000 
+
+GC_angdist =0.999802, Centroid_angdist =0.999802, Error =0.964992
+matched_stars =1 SNT_star = 8471 fe_id =4.000000, star_id =8471.000000 
+
+newMatched_stars: 2
+next_input_IDs: 510 8471 
+Identify new stars entering the FOV
+Frame64: TM succees
+
+Common Stars: 2
+Matched stars = 2 2190.000000 1730.000000 GC_angdist =0.999900, Centroid_angdist =0.999904, Error =39.502471
+GC_angdist =0.999904, Centroid_angdist =0.999904, Error =0.545861
+matched_stars =0 SNT_star = 510 fe_id =1.000000, star_id =510.000000 
+
+GC_angdist =0.999987, Centroid_angdist =0.999987, Error =0.215803
+matched_stars =1 SNT_star = 6010 fe_id =5.000000, star_id =6010.000000 
+
+GC_angdist =0.999802, Centroid_angdist =0.999802, Error =3.397350
+GC_angdist =0.999900, Centroid_angdist =0.999900, Error =0.692267
+matched_stars =2 SNT_star = 8471 fe_id =4.000000, star_id =8471.000000 
+
+newMatched_stars: 3
+next_input_IDs: 510 6010 8471 
+Identify new stars entering the FOV
+Frame65: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame66: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame67: TM succees
+
+Common Stars: 4
+Matched stars = 1 1730.000000 newMatched_stars: 0
+next_input_IDs: 
+Identify new stars entering the FOV
+Frame68: TM Failed. Calling LISM
+
+Frame69: TM Failed. Calling LISM
+
+Common Stars: 2
+Matched stars = 2 6010.000000 2437.000000 GC_angdist =0.999873, Centroid_angdist =0.999873, Error =1.581337
+matched_stars =0 SNT_star = 5512 fe_id =6.000000, star_id =5512.000000 
+
+GC_angdist =0.999755, Centroid_angdist =0.999755, Error =4.572436
+GC_angdist =0.999901, Centroid_angdist =0.999901, Error =2.216345
+newMatched_stars: 1
+next_input_IDs: 5512 
+Identify new stars entering the FOV
+Frame70: TM succees
+
+Common Stars: 3
+Matched stars = 2 2437.000000 5512.000000 newMatched_stars: 0
+next_input_IDs: 
+Identify new stars entering the FOV
+Frame71: TM Failed. Calling LISM
+
+Frame72: TM Failed. Calling LISM
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame73: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame74: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame75: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame76: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame77: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame78: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame79: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame80: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame81: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame82: TM succees
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame83: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame84: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame85: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame86: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame87: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame88: TM succees
+
+Common Stars: 3
+Matched stars = 2 5512.000000 5955.000000 newMatched_stars: 0
+next_input_IDs: 
+Identify new stars entering the FOV
+Frame89: TM Failed. Calling LISM
+
+Frame90: TM Failed. Calling LISM
+
+Common Stars: 6
+Matched stars = 3 GO TO ESTIMAION
+Frame91: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame92: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame93: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame94: TM succees
+
+Common Stars: 3
+Matched stars = 2 2067.000000 5766.000000 GC_angdist =0.999921, Centroid_angdist =0.999921, Error =0.619248
+matched_stars =0 SNT_star = 3174 fe_id =4.000000, star_id =3174.000000 
+
+newMatched_stars: 1
+next_input_IDs: 3174 
+Identify new stars entering the FOV
+Frame95: TM succees
+
+Common Stars: 2
+Matched stars = 2 2067.000000 5766.000000 GC_angdist =0.999921, Centroid_angdist =0.999921, Error =1.635199
+matched_stars =0 SNT_star = 3174 fe_id =5.000000, star_id =3174.000000 
+
+GC_angdist =0.999901, Centroid_angdist =0.999901, Error =0.991387
+matched_stars =1 SNT_star = 7483 fe_id =6.000000, star_id =7483.000000 
+
+newMatched_stars: 2
+next_input_IDs: 3174 7483 
+Identify new stars entering the FOV
+Frame96: TM succees
+
+Common Stars: 3
+Matched stars = 2 2067.000000 5766.000000 GC_angdist =0.999921, Centroid_angdist =0.999921, Error =0.873961
+matched_stars =0 SNT_star = 3174 fe_id =5.000000, star_id =3174.000000 
+
+GC_angdist =0.999901, Centroid_angdist =0.999901, Error =1.110233
+matched_stars =1 SNT_star = 7483 fe_id =6.000000, star_id =7483.000000 
+
+newMatched_stars: 2
+next_input_IDs: 3174 7483 
+Identify new stars entering the FOV
+Frame97: TM succees
+
+Common Stars: 4
+Matched stars = 2 2067.000000 5766.000000 GC_angdist =0.999921, Centroid_angdist =0.999921, Error =0.379117
+matched_stars =0 SNT_star = 3174 fe_id =5.000000, star_id =3174.000000 
+
+GC_angdist =0.999901, Centroid_angdist =0.999901, Error =0.151171
+matched_stars =1 SNT_star = 7483 fe_id =6.000000, star_id =7483.000000 
+
+newMatched_stars: 2
+next_input_IDs: 3174 7483 
+Identify new stars entering the FOV
+Frame98: TM succees
+
+Common Stars: 4
+Matched stars = 2 2067.000000 5766.000000 GC_angdist =0.999921, Centroid_angdist =0.999921, Error =2.093610
+GC_angdist =0.999901, Centroid_angdist =0.999900, Error =2.740212
+newMatched_stars: 0
+next_input_IDs: 
+Identify new stars entering the FOV
+Frame99: TM Failed. Calling LISM
+
+Frame100: TM Failed. Calling LISM
+

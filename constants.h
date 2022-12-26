@@ -24,7 +24,8 @@
 
 //TM constants
 #define Nth 8
-#define N_TH_TRACKING 6
+#define N_TH_TRACKING 3
+#define N_TH_SNT 3
 #define FOV_x 1024
 #define FOV_y 1280
 #define RBM_RADIUS 15
