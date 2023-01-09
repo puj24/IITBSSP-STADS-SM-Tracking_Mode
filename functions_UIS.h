@@ -3,103 +3,17 @@
 #include <math.h>
 #include <string.h>
 
-#include "constants.h"
+#include "constants_UIS.h"
 #include "sm_K_vec_arr.h"
 #include "sm_GC.h"
 #include "sm_TM_SNT.h"
 
-// -------------------------------RGA functions------------------------------------
 
 double absoluteValue(double x)
 {
     if (x < 0) return -x;
     return x;
 }
-
-void sort(double centroids_st[][3], unsigned long pixel_track[MAX_STARS], int tot_stars){
-	double temp_st[3];
-	unsigned long temp_pt;
-	for (int i = 0; i < tot_stars; i++){
-		for (int j = 0; j < tot_stars-i-1; j++){
-			if(pixel_track[j] < pixel_track[j + 1]){
-				temp_pt = pixel_track[j];
-				pixel_track[j] = pixel_track[j + 1];
-				pixel_track[j + 1] = temp_pt;
-				for (int k = 0; k < 3; k++){
-					temp_st[k] = centroids_st[j][k];
-					centroids_st[j][k] = centroids_st[j + 1][k];
-					centroids_st[j + 1][k] = temp_st[k];
-				}
-			}
-		}
-	}
-}
-
-void getData(unsigned short p_i, unsigned short p_j, unsigned short* star_num, unsigned long x_sum[], unsigned long y_sum[], unsigned long pixel_sum[], unsigned short num_pixels[], short arr_out_img[BREADTH + 2][LENGTH + 2]){
-    // base case
-    if (arr_out_img[p_j][p_i] <= THRESHOLD)
-        return;
-
-    // keeping track of the sums
-    x_sum[*star_num] += (unsigned long)arr_out_img[p_j][p_i] * p_i;
-    y_sum[*star_num] += (unsigned long)arr_out_img[p_j][p_i] * p_j;
-    pixel_sum[*star_num] += (unsigned long)arr_out_img[p_j][p_i];
-    num_pixels[*star_num] += 1;
-    arr_out_img[p_j][p_i] = 0;
-
-    // recursive calls
-    getData(p_i - 1, p_j, star_num, x_sum, y_sum, pixel_sum, num_pixels, arr_out_img);
-    getData(p_i + 1, p_j, star_num, x_sum, y_sum, pixel_sum, num_pixels, arr_out_img);
-    getData(p_i, p_j - 1, star_num, x_sum, y_sum, pixel_sum, num_pixels, arr_out_img);
-    getData(p_i, p_j + 1, star_num, x_sum, y_sum, pixel_sum, num_pixels, arr_out_img);
-
-    return;
-}
-
-void FE(short arr_out_img[BREADTH + 2][LENGTH + 2], double centroids_st[MAX_STARS][3], int* tot_stars)
-{
-    int valid_stars = 0;
-    
-    unsigned short star_num = 0;
-    unsigned long x_sum[MAX_STARS] = {0};
-    unsigned long y_sum[MAX_STARS] = {0};
-    unsigned long pixel_sum[MAX_STARS] = {0};
-    unsigned short num_pixels[MAX_STARS] = {0};
-    unsigned long pixel_track[MAX_STARS] = {0};
-
-    int i = 0;
-    int j = 0;
-    int k = 0;
-
-    for (j = 1; j < BREADTH + 1; j += SKIP_PIXELS)
-        for (i = 1; i < LENGTH + 1; i += SKIP_PIXELS)
-            if (arr_out_img[j][i] > THRESHOLD)
-            {
-                getData(i, j, &star_num, x_sum, y_sum, pixel_sum, num_pixels, arr_out_img);
-                star_num++;
-            }
-    
-    for (k = 0; k < star_num; k++)
-    {   
-        
-        if ((num_pixels[k] <= STAR_MAX_PIXEL) & (num_pixels[k] > STAR_MIN_PIXEL))
-        {
-            valid_stars++;
-            centroids_st[valid_stars-1][0] = valid_stars;
-            centroids_st[valid_stars-1][1] = ((double)x_sum[k] / (double)pixel_sum[k] - ((double)(LENGTH / 2) + 0.5)) * PIXEL_WIDTH;
-            centroids_st[valid_stars-1][2] = (-1 * ((double)y_sum[k] / (double)pixel_sum[k] - ((double)(BREADTH / 2) + 0.5))) * PIXEL_WIDTH;
-			pixel_track[valid_stars-1] = pixel_sum[k];
-        }
-    }
-
-    *tot_stars += valid_stars;
-	sort(centroids_st, pixel_track, *tot_stars);
-	if (*tot_stars > NUM_MAX_STARS)
-		*tot_stars = NUM_MAX_STARS;
-    return;
-}
-
-// ------------------------------SM functions------------------------------------------
 
 //LISM functions
 
@@ -561,7 +475,6 @@ void LISM(double centroids_st[MAX_STARS][3], int tot_stars, double data[3][MAX_S
     }
 }
 
-
 //TM functions
 
 void commonStars(int *common_stars, int prev_matched_stars, int curr_matched_stars, int prev_star_ids[prev_matched_stars], int prev_fe_ids[prev_matched_stars], int curr_star_ids[curr_matched_stars],
@@ -916,5 +829,3 @@ void starNeighbourhoodMatch(double RBM_matched[][4], int RBM_matched_stars, doub
     }
     *new_matched_stars = matched_stars;
 }
-
-

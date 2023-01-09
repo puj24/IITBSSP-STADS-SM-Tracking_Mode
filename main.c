@@ -202,12 +202,9 @@ int main()
                     prev_centroids_st[i][2] = curr_centroids_st[i][2];
 
                     //curr_data -> prev_data 
-                    for (int i = 0; i < MAX_STARS; i++)
-                    {   
-                        prev_data[0][i] = curr_data[0][i];
-                        prev_data[1][i] = curr_data[1][i];
-                        prev_data[2][i] = curr_data[2][i];
-                    }               
+                    prev_data[0][i] = curr_data[0][i];
+                    prev_data[1][i] = curr_data[1][i];
+                    prev_data[2][i] = curr_data[2][i];              
                 }
 
                 //next_frame -> curr_frame
@@ -224,12 +221,9 @@ int main()
                     curr_centroids_st[i][2] = next_centroids_st[i][2];
 
                     //next_data -> curr_data
-                    for (int i = 0; i < MAX_STARS; i++)
-                    {
-                        curr_data[0][i] = next_data[0][i];
-                        curr_data[1][i] = next_data[1][i];
-                        curr_data[2][i] = next_data[2][i];
-                    }
+                    curr_data[0][i] = next_data[0][i];
+                    curr_data[1][i] = next_data[1][i];
+                    curr_data[2][i] = next_data[2][i];
                 }
             }
             else
@@ -262,23 +256,6 @@ int main()
                 printf("Frame%d: TM Failed. Calling LISM\n\n", frame + 1);
                 LISM(curr_centroids_st, curr_tot_stars, curr_data, curr_input_ids, curr_star_ids, &curr_matched_stars);
             }
-
-            // if(! TM_on)
-            // {  
-            //     for(int i = 0; i < MAX_STARS; i++)
-            //     {
-            //         curr_input_ids[i] = 0;
-            //         curr_star_ids[i] = 0;
-            //         curr_data[0][i] = 0;
-            //         curr_data[1][i] = 0;
-            //         curr_data[2][i] = 0;
-            //     }
-            //     curr_matched_stars = 0;
-            //     //LISM on current frame
-            //     printf("Frame%d: TM Failed. Calling LISM\n\n", frame + 1);
-            //     LISM(curr_centroids_st, curr_tot_stars, curr_data, curr_input_ids, curr_star_ids, &curr_matched_stars);                
-                             
-            // }     
         }
 
         if (frame == 99) break;
