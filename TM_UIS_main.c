@@ -403,6 +403,12 @@ int main()
                 
                 // printf("newMatched_stars: %d\n", new_matched_stars);
                 next_matched_stars = RBM_matched_stars + new_matched_stars;
+                for (int i = RBM_matched_stars; i < next_matched_stars; i++)
+                {
+                    next_input_ids[i] = newEntries[i - RBM_matched_stars][0];
+                    next_star_ids[i] = newEntries[i - RBM_matched_stars][1];
+                    // printf("%d ", next_star_ids[i]);
+                }
 
                 for (int i = 0; i < MAX_STARS; i++)
                 {
