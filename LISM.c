@@ -228,199 +228,30 @@ double (*UIS_frames[100]) [3] =
  arr_out_UIS_81, arr_out_UIS_82, arr_out_UIS_83, arr_out_UIS_84, arr_out_UIS_85, arr_out_UIS_86, arr_out_UIS_87, arr_out_UIS_88, arr_out_UIS_89, arr_out_UIS_90, 
  arr_out_UIS_91, arr_out_UIS_92, arr_out_UIS_93, arr_out_UIS_94, arr_out_UIS_95, arr_out_UIS_96, arr_out_UIS_97, arr_out_UIS_98, arr_out_UIS_99, arr_out_UIS_100,};
 
-
-int sm_K_vec_arr[224792][3];
-double prev_centroids_st[MAX_STARS][3]; 
-
 int main()
 {
     clock_t start, end;
     start = clock();
-    
+
     int UIS_tot_stars[100];
     UIS_N_i(UIS_tot_stars);
 
-    int frame = 1;
-    bool TM_on = false;
+    int frame = 0;
+    int tot_stars = UIS_tot_stars[frame];
+    double (*centroids_st) [3] = UIS_frames[frame];
 
-    // prev frame 
-    int prev_frame = frame - 1;
-    int prev_tot_stars = UIS_tot_stars[prev_frame];
-    double (*prev_centroids_st) [3] = UIS_frames[prev_frame];
+    int matched_stars = 0;
+    int input_ids[MAX_STARS] = {0};
+    int star_ids[MAX_STARS] = {0};
+    double data[3][MAX_STARS];
 
-    int prev_matched_stars = 0;
-    int prev_input_ids[MAX_STARS] = {0};
-    int prev_star_ids[MAX_STARS] = {0};
-    double prev_data[3][MAX_STARS];
+    while(frame < 100){
 
-    // current frame
-    int curr_frame = frame;
-    int curr_tot_stars = UIS_tot_stars[curr_frame];
-    double (*curr_centroids_st) [3] = UIS_frames[curr_frame];
-
-    int curr_matched_stars = 0;
-    int curr_input_ids[MAX_STARS] = {0};
-    int curr_star_ids[MAX_STARS] = {0};
-    double curr_data[3][MAX_STARS];
-
-    //select next frame
-    int next_frame = frame - 1;
-    int next_tot_stars = UIS_tot_stars[next_frame];
-    //**************************************
-
-    int next_matched_stars = 0;
-    int next_input_ids[MAX_STARS] = {0};
-    int next_star_ids[MAX_STARS] = {0};
-    double next_data[3][MAX_STARS];
-
-    while(frame < 100)
-    {
-        if (frame == 1)
-        {
-            //LISM on previous frame
-            printf("Frame1: calling LISM\n\n");
-            LISM(UIS_frames[prev_frame], prev_tot_stars, prev_data, prev_input_ids, prev_star_ids, &prev_matched_stars);
-
-            //LISM on current frame
-            printf("Frame2: calling LISM\n\n");
-            LISM(UIS_frames[curr_frame], curr_tot_stars, curr_data, curr_input_ids, curr_star_ids, &curr_matched_stars);
-        }
-        else
-        {
-            if (TM_on)
-            {
-                printf("Frame%d: TM succees\n\n", frame + 1);
-
-                //curr_frame -> prev_frame
-                prev_tot_stars = curr_tot_stars;
-                prev_matched_stars = curr_matched_stars;
-
-                for (int i = 0; i < MAX_STARS; i++)
-                {
-                    //here both fe_id, star_id are of same ith star becz these are assigned in LISM
-                    prev_input_ids[i] = curr_input_ids[i];
-                    prev_star_ids[i] = curr_star_ids[i];
-
-                    //***********prev_centroid_st & curr_centroid_st***********
-                    prev_frame = curr_frame;
-                
-                    //curr_data -> prev_data
-                    prev_data[0][i] = curr_data[0][i];
-                    prev_data[1][i] = curr_data[1][i];
-                    prev_data[2][i] = curr_data[2][i];
-                }
-
-                //next_frame -> curr_frame
-                curr_tot_stars = next_tot_stars;
-                curr_matched_stars = next_matched_stars;
-
-                for (int i = 0; i < MAX_STARS; i++)
-                {
-                    curr_input_ids[i] = next_input_ids[i];
-                    curr_star_ids[i] = next_star_ids[i];
-
-                    //************curr_centroid_st & next_centroid_st**********
-                    curr_frame = next_frame;
-
-                    //next_data -> curr_data
-                    curr_data[0][i] = next_data[0][i];
-                    curr_data[1][i] = next_data[1][i];
-                    curr_data[2][i] = next_data[2][i];
-                }                
-            }
-            else
-            {
-                //run LISM on next 2 frames & send them to find common stars
-                prev_tot_stars = next_tot_stars;
-                prev_matched_stars = 0;
-
-                //*********** next_centroid_st -> prev_centroid_st ************
-                prev_frame = next_frame;
-                if (frame == 99) break;
-                //LISM on frame
-                printf("Frame%d: TM Failed. Calling LISM\n\n", frame + 1);
-                LISM(UIS_frames[prev_frame], prev_tot_stars, prev_data, prev_input_ids, prev_star_ids, &prev_matched_stars);
-
-                frame ++;
-                curr_frame = frame;
-                curr_tot_stars = UIS_tot_stars[curr_frame];
-                curr_matched_stars = 0;
-                // (*curr_centroids_st) [3] = UIS_frames[curr_frame];
-
-                //LISM on current frame
-                printf("Frame%d: TM Failed. Calling LISM\n\n", frame + 1);
-                LISM(UIS_frames[curr_frame], curr_tot_stars, curr_data, curr_input_ids, curr_star_ids, &curr_matched_stars);                
-            }
-        }
-
-        if (frame == 99) break;
-        int common_stars = 0;
-        double common_centroid_data[MAX_STARS][5];
-
-        commonStars(&common_stars, prev_matched_stars, curr_matched_stars, prev_star_ids, prev_input_ids, curr_star_ids, curr_input_ids, prev_tot_stars, curr_tot_stars, UIS_frames[prev_frame], UIS_frames[curr_frame], common_centroid_data);
-        printf("Common Stars: %d\n", common_stars);
-
-        next_frame = frame + 1;
+        tot_stars = UIS_tot_stars[frame];
+        LISM(UIS_frames[frame], tot_stars, data, input_ids, star_ids, &matched_stars);
         frame ++;
-        next_tot_stars = UIS_tot_stars[next_frame];
-
-        if(common_stars >= 2)
-        {
-            double predicted_centroids_st[common_stars][3];
-            predictCentroid(common_centroid_data, predicted_centroids_st, common_stars);
-
-            double RBM_centroid_st[MAX_STARS][4];
-            int RBM_matched_stars = radiusBasedMatching(common_stars, next_tot_stars, predicted_centroids_st, UIS_frames[next_frame], RBM_centroid_st);
-            printf("Matched stars = %d ", RBM_matched_stars);
-
-            //next fe, star IDs of matched stars
-            for (int i = 0; i < RBM_matched_stars; i++)
-            {
-                next_input_ids[i] = RBM_centroid_st[i][0];
-                next_star_ids[i] = RBM_centroid_st[i][1];
-            }
-
-            if(RBM_matched_stars >= N_TH_TRACKING)
-            {
-                //next data from sm_GC
-                for (int i = 0; i < MAX_STARS; i++)
-                {
-                    next_data[0][i] = sm_GC[next_star_ids[i] - 1][1];
-                    next_data[1][i] = sm_GC[next_star_ids[i] - 1][2];
-                    next_data[2][i] = sm_GC[next_star_ids[i] - 1][3];
-                }
-                next_matched_stars = RBM_matched_stars;
-                TM_on = true;
-                printf("GO TO ESTIMAION\n");
-            }
-
-            else
-            {
-                int new_matched_stars = 0;
-                double newEntries[N_TH_TRACKING][4];
-
-                starNeighbourhoodMatch(RBM_centroid_st, RBM_matched_stars, UIS_frames[next_frame], next_tot_stars, sm_SNT, sm_GC, newEntries, &new_matched_stars);
-                
-                // printf("newMatched_stars: %d\n", new_matched_stars);
-                next_matched_stars = RBM_matched_stars + new_matched_stars;
-
-                for (int i = 0; i < MAX_STARS; i++)
-                {
-                    next_data[0][i] = sm_GC[next_star_ids[i] - 1][1];
-                    next_data[1][i] = sm_GC[next_star_ids[i] - 1][2];
-                    next_data[2][i] = sm_GC[next_star_ids[i] - 1][3];
-                }
-                printf("Identify new stars entering the FOV\n");
-
-                if (next_matched_stars < N_TH_SNT) TM_on = false;
-                else TM_on = true;
-            }
-        }
-        else{
-            TM_on = false;
-            continue;
-        }
     }
+
     end = clock();
     double duration = ((double)end - start)/CLOCKS_PER_SEC;
     printf("Time taken to execute in seconds : %f", duration);

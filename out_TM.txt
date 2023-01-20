@@ -1,0 +1,385 @@
+Frame1: calling LISM
+
+Frame2: calling LISM
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame3: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame4: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame5: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame6: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame7: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame8: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame9: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame10: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame11: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame12: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame13: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame14: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame15: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame16: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame17: TM succees
+
+Common Stars: 5
+Matched stars = 2 Identify new stars entering the FOV
+Frame18: TM succees
+
+Common Stars: 5
+Matched stars = 2 Identify new stars entering the FOV
+Frame19: TM Failed. Calling LISM
+
+Frame20: TM Failed. Calling LISM
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame21: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame22: TM succees
+
+Common Stars: 6
+Matched stars = 5 GO TO ESTIMAION
+Frame23: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame24: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame25: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame26: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame27: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame28: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame29: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame30: TM succees
+
+Common Stars: 5
+Matched stars = 4 GO TO ESTIMAION
+Frame31: TM succees
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame32: TM succees
+
+Common Stars: 3
+Matched stars = 2 Identify new stars entering the FOV
+Frame33: TM Failed. Calling LISM
+
+Frame34: TM Failed. Calling LISM
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame35: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame36: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame37: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame38: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame39: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame40: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame41: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame42: TM succees
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame43: TM succees
+
+Common Stars: 3
+Matched stars = 2 Identify new stars entering the FOV
+Frame44: TM Failed. Calling LISM
+
+Frame45: TM Failed. Calling LISM
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame46: TM succees
+
+Common Stars: 6
+Matched stars = 6 GO TO ESTIMAION
+Frame47: TM succees
+
+Common Stars: 6
+Matched stars = 5 GO TO ESTIMAION
+Frame48: TM succees
+
+Common Stars: 5
+Matched stars = 4 GO TO ESTIMAION
+Frame49: TM succees
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame50: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame51: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame52: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame53: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame54: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame55: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame56: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame57: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame58: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame59: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame60: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame61: TM succees
+
+Common Stars: 3
+Matched stars = 2 Identify new stars entering the FOV
+Frame62: TM Failed. Calling LISM
+
+Frame63: TM Failed. Calling LISM
+
+Common Stars: 6
+Matched stars = 5 GO TO ESTIMAION
+Frame64: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame65: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame66: TM succees
+
+Common Stars: 5
+Matched stars = 5 GO TO ESTIMAION
+Frame67: TM succees
+
+Common Stars: 5
+Matched stars = 4 GO TO ESTIMAION
+Frame68: TM succees
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame69: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame70: TM succees
+
+Common Stars: 3
+Matched stars = 1 Identify new stars entering the FOV
+Frame71: TM Failed. Calling LISM
+
+Frame72: TM Failed. Calling LISM
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame73: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame74: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame75: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame76: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame77: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame78: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame79: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame80: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame81: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame82: TM succees
+
+Common Stars: 4
+Matched stars = 3 GO TO ESTIMAION
+Frame83: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame84: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame85: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame86: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame87: TM succees
+
+Common Stars: 3
+Matched stars = 3 GO TO ESTIMAION
+Frame88: TM succees
+
+Common Stars: 3
+Matched stars = 2 Identify new stars entering the FOV
+Frame89: TM Failed. Calling LISM
+
+Frame90: TM Failed. Calling LISM
+
+Common Stars: 6
+Matched stars = 4 GO TO ESTIMAION
+Frame91: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame92: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame93: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame94: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame95: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame96: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame97: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame98: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame99: TM succees
+
+Common Stars: 4
+Matched stars = 4 GO TO ESTIMAION
+Frame100: TM succees
+
+Time taken to execute in seconds : 0.025891

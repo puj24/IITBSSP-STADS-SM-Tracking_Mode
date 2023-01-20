@@ -564,24 +564,30 @@ void LISM(double centroids_st[MAX_STARS][3], int tot_stars, double data[3][MAX_S
 
 //TM functions
 
-void commonStars(int *common_stars, int prev_matched_stars, int curr_matched_stars, int prev_star_ids[prev_matched_stars], int prev_fe_ids[prev_matched_stars], int curr_star_ids[curr_matched_stars],
-                 int curr_fe_ids[curr_matched_stars], int prev_tot_stars, int curr_tot_stars, double prev_centroids_st[MAX_STARS][3], double curr_centroids_st[MAX_STARS][3], double common_stars_data[MAX_STARS][5])
+void commonStars(int *common_stars, int prev_matched_stars, int curr_matched_stars, int prev_star_ids[prev_matched_stars], int prev_fe_ids[prev_matched_stars], int curr_star_ids[curr_matched_stars],int curr_fe_ids[curr_matched_stars], int prev_tot_stars, int curr_tot_stars, double prev_centroids_st[MAX_STARS][3], double curr_centroids_st[MAX_STARS][3], double common_stars_data[MAX_STARS][5])
 {
     int idx = 0;
-    for(int i = 0; i < prev_matched_stars; i++){
-        for(int j = 0; j < curr_matched_stars; j++){
-            if(prev_star_ids[i] == curr_star_ids[j]){
-                common_stars_data[idx][0] = curr_star_ids[j];
 
-                for(int k = 0; k < prev_tot_stars; k++){
-                    if(prev_fe_ids[i] == prev_centroids_st[k][0]){
+    for(int i = 0; i < prev_matched_stars; i++)
+    {
+        for(int j = 0; j < curr_matched_stars; j++)
+        {
+            if(prev_star_ids[i] == curr_star_ids[j])
+            {
+                common_stars_data[idx][0] = curr_star_ids[j];
+                for(int k = 0; k < prev_tot_stars; k++)
+                {
+                    if(prev_fe_ids[i] == prev_centroids_st[k][0])
+                    {
                         common_stars_data[idx][1] = prev_centroids_st[k][1];
                         common_stars_data[idx][2] = prev_centroids_st[k][2];
                     }
                 }
 
-                for(int k = 0; k < curr_tot_stars; k++){
-                    if(curr_fe_ids[j] == curr_centroids_st[k][0]){
+                for(int k = 0; k < curr_tot_stars; k++)
+                {
+                    if(curr_fe_ids[j] == curr_centroids_st[k][0])
+                    {
                         common_stars_data[idx][3] = curr_centroids_st[k][1];
                         common_stars_data[idx][4] = curr_centroids_st[k][2];
                     }
@@ -601,8 +607,8 @@ void predictCentroid(double common_centroid_data[][5], double predict_centroids_
     double dun, dvn;
     double m[2*common_stars][3];
 
-    for (int k = 0; k < common_stars; k++){
-
+    for (int k = 0; k < common_stars; k++)
+    {
             u = common_centroid_data[k][3];     //curr_centroid_x
             v = common_centroid_data[k][4];     //curr_centroid_y
 
@@ -621,8 +627,8 @@ void predictCentroid(double common_centroid_data[][5], double predict_centroids_
 
     double mTm[3][3] = {0,0,0,0,0,0,0,0,0};
 
-    for (int k=0; k<2*common_stars; k++){
-
+    for (int k=0; k<2*common_stars; k++)
+    {
         mTm[0][0] += m[k][0]*m[k][0];
         mTm[1][0] += m[k][1]*m[k][0];
         mTm[2][0] += m[k][2]*m[k][0];
@@ -632,8 +638,7 @@ void predictCentroid(double common_centroid_data[][5], double predict_centroids_
         mTm[0][2] += m[k][0]*m[k][2];
         mTm[1][2] += m[k][1]*m[k][2];
         mTm[2][2] += m[k][2]*m[k][2];
-
-        }
+    }
 
     /*for (int k=0; k<3; k++)
         cout<<mTm[k][0]/f/f<<' '<<mTm[k][1]/f/f<<' '<<mTm[k][2]/f/f<<endl;
@@ -642,18 +647,16 @@ void predictCentroid(double common_centroid_data[][5], double predict_centroids_
     double determinant = 0;
     double minv[3][3];      //(mTm)^c / |mTm|
 
-    for(int i = 0; i < 3; i++){
-
+    for(int i = 0; i < 3; i++)
+    {
         determinant = determinant + (mTm[0][i]*(mTm[1][(i+1)%3]*mTm[2][(i+2)%3] - mTm[1][(i+2)%3]*mTm[2][(i+1)%3]));
-
     }
 
-    for(int i = 0; i < 3; i++){
-
-        for(int j = 0; j < 3; j++){
-
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
             minv[i][j] = ((mTm[(i+1)%3][(j+1)%3] * mTm[(i+2)%3][(j+2)%3]) - (mTm[(i+1)%3][(j+2)%3]*mTm[(i+2)%3][(j+1)%3]))/ determinant;
-
         }
     }
 
@@ -662,8 +665,8 @@ void predictCentroid(double common_centroid_data[][5], double predict_centroids_
     cout<<endl<<endl;*/
 
     double m3[3][2*common_stars];
-    for (int k = 0; k < 2*common_stars; k++){
-        
+    for (int k = 0; k < 2*common_stars; k++)
+    {        
         m3[0][k] = minv[0][0]*m[k][0] + minv[0][1]*m[k][1] + minv[0][2]*m[k][2];
         m3[1][k] = minv[1][0]*m[k][0] + minv[1][1]*m[k][1] + minv[1][2]*m[k][2];
         m3[2][k] = minv[2][0]*m[k][0] + minv[2][1]*m[k][1] + minv[2][2]*m[k][2];
@@ -674,8 +677,8 @@ void predictCentroid(double common_centroid_data[][5], double predict_centroids_
     cout<<endl<<endl;*/
 
     double col[2*common_stars];
-    for (int k = 0; k < common_stars; k++){
-
+    for (int k = 0; k < common_stars; k++)
+    {
         col[2*k] = (common_centroid_data[k][3] - common_centroid_data[k][1]);
         col[2*k+1] = (common_centroid_data[k][4] - common_centroid_data[k][2]);
     }
@@ -684,15 +687,15 @@ void predictCentroid(double common_centroid_data[][5], double predict_centroids_
         cout<<col[k]<<endl;
     cout<<endl<<endl;*/
 
-    for (int k = 0; k < 2*common_stars; k++){
-
+    for (int k = 0; k < 2*common_stars; k++)
+    {
         phi += m3[0][k]*col[k];
         theta += m3[1][k]*col[k];
         psi += m3[2][k]*col[k];
     }
 
-    for (int k = 0; k < common_stars; k++){
-
+    for (int k = 0; k < common_stars; k++)
+    {
         u = common_centroid_data[k][1];
         v = common_centroid_data[k][2];
 
@@ -798,8 +801,8 @@ int radiusBasedMatching(int common_stars, int next_tot_stars, double predicted_c
     double r = RBM_RADIUS * pixel_size;
     // printf("r = %f\n", r);
 
-    for (int i = 0; i < common_stars; i++){
-
+    for (int i = 0; i < common_stars; i++)
+    {
         int stars_in_range = 0;
         for (int j = 0; j < next_tot_stars; j++)
         {            
@@ -828,7 +831,8 @@ int radiusBasedMatching(int common_stars, int next_tot_stars, double predicted_c
                 }                                                    
             }
         }
-        if (stars_in_range == 1){
+        if (stars_in_range == 1)
+        {
             // printf("check: stars_in_range = 1\n");
             RBM_match[matched][0] = next_centroids_st[sole_matched][0]; //fe_id
             RBM_match[matched][1] = predicted_centroids_st[i][0];       //star_id
@@ -893,8 +897,8 @@ void starNeighbourhoodMatch(double RBM_matched[][4], int RBM_matched_stars, doub
                 double Centroid_angdist = centroid_angdist(x1, y1, x2, y2);
                 double error = absoluteValue(GC_ID_angdist - Centroid_angdist);
 
-                if (10e6 * error < 100)
-                printf("GC_angdist =%f, Centroid_angdist =%f, Error =%f\n", GC_ID_angdist, Centroid_angdist, 10e6 * error);
+                // if (10e6 * error < 100)
+                // printf("GC_angdist =%f, Centroid_angdist =%f, Error =%f\n", GC_ID_angdist, Centroid_angdist, 10e6 * error);
 
                 if(10e6*error < 2)
                 {
@@ -902,8 +906,8 @@ void starNeighbourhoodMatch(double RBM_matched[][4], int RBM_matched_stars, doub
                     newEntries[matched_stars][1] = sm_SNT[curr_ref_star - 1][j];
                     newEntries[matched_stars][2] = fe_unmatched[i_unmatch][1];
                     newEntries[matched_stars][3] = fe_unmatched[i_unmatch][2];
-                    printf("matched_stars =%d SNT_star = %d ", matched_stars, sm_SNT[curr_ref_star - 1][j]);
-                    printf("fe_id =%f, star_id =%f \n\n", newEntries[matched_stars][0], newEntries[matched_stars][1]);
+                    // printf("matched_stars =%d SNT_star = %d ", matched_stars, sm_SNT[curr_ref_star - 1][j]);
+                    // printf("fe_id =%f, star_id =%f \n\n", newEntries[matched_stars][0], newEntries[matched_stars][1]);
                     matched_stars++;
                     done = true;
                 }
