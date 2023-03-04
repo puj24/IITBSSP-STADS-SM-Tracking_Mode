@@ -248,8 +248,20 @@ int main()
     while(frame < 100){
 
         tot_stars = UIS_tot_stars[frame];
+        // tot_stars = 26;
         LISM(UIS_frames[frame], tot_stars, data, input_ids, star_ids, &matched_stars);
         frame ++;
+
+        if(matched_stars != 0)
+            {
+                for (int j = 0; j < matched_stars; j++)
+                {
+                    printf("%d %d ", input_ids[j], star_ids[j]);
+                    printf("%.16f %.16f %.16f ", data[0][j], data[1][j], data[2][j]);
+                    printf("%.16f %.16f %.16f\n",data[0][j + matched_stars], data[1][j + matched_stars], data[2][j + matched_stars]);
+                }
+            }
+            printf("\n\n\n");
     }
 
     end = clock();

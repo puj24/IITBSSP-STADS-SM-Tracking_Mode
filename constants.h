@@ -12,7 +12,7 @@
 //SM constants
 #define FOCAL_LENGTH 0.036
 #define EPSILON 2.22e-15
-#define DELTA 1e-4
+#define DELTA 1e-6
 #define ANG_DIST_TOLERANCE 1.2
 #define N_GC 8876
 #define N_KVEC_PAIRS 224792
