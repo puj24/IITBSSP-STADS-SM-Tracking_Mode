@@ -248,9 +248,12 @@ int main()
     while(frame < 100){
 
         tot_stars = UIS_tot_stars[frame];
-        // tot_stars = 26;
+        printf("UIS_iter_%d\n\n", frame + 1);
+
         LISM(UIS_frames[frame], tot_stars, data, input_ids, star_ids, &matched_stars);
         frame ++;
+
+        printf("Total Matched Stars = %d\n", matched_stars);
 
         if(matched_stars != 0)
             {

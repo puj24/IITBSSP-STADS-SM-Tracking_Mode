@@ -174,19 +174,12 @@ void sm_4_star(double four_stars[][4], double sm_3D_vecs[][4], int sm_IS[][2], d
                         SIM_flags[sm_K_vec_arr[i - 1][1] - 1] = 1;
                         indx_arr[top_indx] = sm_K_vec_arr[i-1][1] - 1;
                         top_indx++;
-                    }
-                    
+                    }                
                 }
             }
         }
     }    
-  //printing SIM 
-    // printf("printing SIM\n");
-    // int ip = 0;
-    // for(ip = 0; ip < N_GC; ip++)
-    // {
-    //     printf(" %d %d %d %d %d %d %d\n", ip, SIM[ip][0], SIM[ip][1], SIM[ip][2], SIM[ip][3], SIM[ip][4], SIM[ip][5]);
-    // }
+
 
     for (j = 0; j < 4; j++)
     {
@@ -220,7 +213,7 @@ void sm_4_star(double four_stars[][4], double sm_3D_vecs[][4], int sm_IS[][2], d
                 {
                     matched_rows++;
                     temp = k;
-                    printf("%d ",temp);
+                    // printf("%d ",temp);
                 }
                 SIM_flags[k] = 0;
             }
@@ -399,10 +392,10 @@ void LISM(double centroids_st[MAX_STARS][3], int tot_stars, double data[3][MAX_S
                     countt++;
                 }
             }
-            int var=0;
-            for(var = 0; var < 4; var++){
-                printf("%lf  ",four_stars[var][0]);
-            }
+            // int var=0;
+            // for(var = 0; var < 4; var++){
+            //     printf("%lf  ",four_stars[var][0]);
+            // }
             // Perform 4 star N star algorithm
             sm_4_star(four_stars, sm_3D_vecs, sm_IS, body_vecs_IS, sm_K_vec_arr, &N_match, N_i, q, m, N_is);
 
