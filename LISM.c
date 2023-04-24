@@ -108,7 +108,7 @@
 #include "UIS_99.h"
 #include "UIS_100.h"
 
-#include "functions_UIS.h"
+#include "functions.h"
 #include "constants.h"
 
 void UIS_N_i(int tot_stars_UIS[100])
@@ -245,26 +245,26 @@ int main()
     int star_ids[MAX_STARS] = {0};
     double data[3][MAX_STARS];
 
-    while(frame < 100){
-
+    while(frame < 100)
+    {
         tot_stars = UIS_tot_stars[frame];
         printf("UIS_iter_%d\n\n", frame + 1);
 
+        matched_stars = 0;
         LISM(UIS_frames[frame], tot_stars, data, input_ids, star_ids, &matched_stars);
         frame ++;
 
-        printf("Total Matched Stars = %d\n", matched_stars);
-
         if(matched_stars != 0)
+        {
+            printf("Total Matched Stars = %d\n", matched_stars);
+            for (int j = 0; j < matched_stars; j++)
             {
-                for (int j = 0; j < matched_stars; j++)
-                {
-                    printf("%d %d ", input_ids[j], star_ids[j]);
-                    printf("%.16f %.16f %.16f ", data[0][j], data[1][j], data[2][j]);
-                    printf("%.16f %.16f %.16f\n",data[0][j + matched_stars], data[1][j + matched_stars], data[2][j + matched_stars]);
-                }
+                printf("%d %d ", input_ids[j], star_ids[j]);
+                printf("%.16f %.16f %.16f ", data[0][j], data[1][j], data[2][j]);
+                printf("%.16f %.16f %.16f\n",data[0][j + matched_stars], data[1][j + matched_stars], data[2][j + matched_stars]);
             }
-            printf("\n\n\n");
+        }
+        printf("\n\n\n");
     }
 
     end = clock();

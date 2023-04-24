@@ -108,7 +108,7 @@
 #include "UIS_99.h"
 #include "UIS_100.h"
 
-#include "functions_UIS.h"
+#include "functions.h"
 #include "constants.h"
 
 void UIS_N_i(int tot_stars_UIS[100])
@@ -277,16 +277,14 @@ int main()
     {
         if (frame == 1)
         {
-            //LISM on previous frame
-            // printf("Frame1: calling LISM\n\n");
             printf("UIS_iter_%d\n\n", prev_frame + 1);
 
+            //LISM on previous frame
             LISM(UIS_frames[prev_frame], prev_tot_stars, prev_data, prev_input_ids, prev_star_ids, &prev_matched_stars);
-
-            printf("Total Matched Stars = %d\n", prev_matched_stars);
 
             if(prev_matched_stars != 0)
             {
+                printf("Total Matched Stars = %d\n", prev_matched_stars);
                 for (int j = 0; j < prev_matched_stars; j++)
                 {
                     printf("%d %d ", prev_input_ids[j], prev_star_ids[j]);
@@ -302,10 +300,9 @@ int main()
 
             LISM(UIS_frames[curr_frame], curr_tot_stars, curr_data, curr_input_ids, curr_star_ids, &curr_matched_stars);
 
-            printf("Total Matched Stars = %d\n", curr_matched_stars);
-
             if(curr_matched_stars != 0)
             {
+                printf("Total Matched Stars = %d\n", curr_matched_stars);
                 for (int j = 0; j < curr_matched_stars; j++)
                 {
                     printf("%d %d ", curr_input_ids[j], curr_star_ids[j]);
@@ -380,10 +377,10 @@ int main()
                 }
 
                 printf("UIS_iter_%d\n\n", curr_frame + 1);
-                printf("Total Matched Stars = %d\n", curr_matched_stars);
                 
                 if(curr_matched_stars != 0)
                 {
+                    printf("Total Matched Stars = %d\n", curr_matched_stars);
                     for (int j = 0; j < curr_matched_stars; j++)
                     {
                         printf("%d %d ", curr_input_ids[j], curr_star_ids[j]);

@@ -564,7 +564,7 @@ void LISM(double centroids_st[MAX_STARS][3], int tot_stars, double data[3][MAX_S
 
 //TM functions
 
-void commonStars(int *common_stars, int prev_matched_stars, int curr_matched_stars, int prev_star_ids[prev_matched_stars], int prev_fe_ids[prev_matched_stars], int curr_star_ids[curr_matched_stars],int curr_fe_ids[curr_matched_stars], int prev_tot_stars, int curr_tot_stars, double prev_centroids_st[MAX_STARS][3], double curr_centroids_st[MAX_STARS][3], double common_stars_data[MAX_STARS][5])
+void commonStars(int *common_stars, int prev_matched_stars, int curr_matched_stars, int prev_star_ids[], int prev_fe_ids[], int curr_star_ids[],int curr_fe_ids[], int prev_tot_stars, int curr_tot_stars, double prev_centroids_st[MAX_STARS][3], double curr_centroids_st[MAX_STARS][3], double common_stars_data[MAX_STARS][5])
 {
     int idx = 0;
 
